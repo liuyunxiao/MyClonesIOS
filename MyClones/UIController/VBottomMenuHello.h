@@ -1,5 +1,5 @@
 //
-//  BottomMenuSelf.h
+//  VBottomMenuHello.h
 //  MyClones
 //
 //  Created by lyx on 15/6/19.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BottomMenuSelf : UIView
+@interface VBottomMenuHello : UIView
 
 @end

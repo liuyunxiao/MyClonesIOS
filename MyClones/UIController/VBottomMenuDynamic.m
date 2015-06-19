@@ -1,13 +1,13 @@
 //
-//  BottomMenuHello.h
+//  VBottomMenuDynamic.m
 //  MyClones
 //
 //  Created by lyx on 15/6/19.
 //  Copyright (c) 2015年 Zhenwei. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VBottomMenuDynamic.h"
 
-@interface BottomMenuHello : UIView
+@implementation VBottomMenuDynamic
 
 @end

@@ -16,19 +16,19 @@
     [super viewDidLoad];
     viewPages = [[NSMutableArray alloc] init];
     
-    UIView* viewDynamic = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"BottomMenuDynamic" owner:nil options:nil] lastObject];
+    UIView* viewDynamic = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuDynamic" owner:nil options:nil] lastObject];
     [viewPages addObject:viewDynamic];
     [self.view addSubview:viewDynamic];
     
-    UIView* viewPhantasm = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"BottomMenuPhantasm" owner:nil options:nil] lastObject];
+    UIView* viewPhantasm = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuPhantasm" owner:nil options:nil] lastObject];
     [viewPages addObject:viewPhantasm];
     [self.view addSubview:viewPhantasm];
 
-    UIView* viewHello = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"BottomMenuHello" owner:nil options:nil] lastObject];
+    UIView* viewHello = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuHello" owner:nil options:nil] lastObject];
     [viewPages addObject:viewHello];
     [self.view addSubview:viewHello];
 
-    UIView* viewSelf = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"BottomMenuSelf" owner:nil options:nil] lastObject];
+    UIView* viewSelf = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuSelf" owner:nil options:nil] lastObject];
     [viewPages addObject:viewSelf];
     [self.view addSubview:viewSelf];
 }

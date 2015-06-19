@@ -108,13 +108,14 @@
 		54D1E6C71B3453E100C7D044 /* SlideNavigationController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6C61B3453E100C7D044 /* SlideNavigationController+Utils.m */; };
 		54D1E6CB1B3457E700C7D044 /* CLRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6CA1B3457E700C7D044 /* CLRegister.m */; };
 		54D1E6CE1B34586100C7D044 /* CLHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6CD1B34586100C7D044 /* CLHome.m */; };
-		54D1E6D11B3464CE00C7D044 /* BottomMenuDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6D01B3464CE00C7D044 /* BottomMenuDynamic.m */; };
-		54D1E6D41B3464E100C7D044 /* BottomMenuPhantasm.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6D31B3464E100C7D044 /* BottomMenuPhantasm.m */; };
-		54D1E6D71B3464F400C7D044 /* BottomMenuHello.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6D61B3464F400C7D044 /* BottomMenuHello.m */; };
-		54D1E6DA1B34650500C7D044 /* BottomMenuSelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6D91B34650500C7D044 /* BottomMenuSelf.m */; };
+		54D1E6D11B3464CE00C7D044 /* VBottomMenuDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6D01B3464CE00C7D044 /* VBottomMenuDynamic.m */; };
+		54D1E6D41B3464E100C7D044 /* VBottomMenuPhantasm.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6D31B3464E100C7D044 /* VBottomMenuPhantasm.m */; };
+		54D1E6D71B3464F400C7D044 /* VBottomMenuHello.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6D61B3464F400C7D044 /* VBottomMenuHello.m */; };
+		54D1E6DA1B34650500C7D044 /* VBottomMenuSelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6D91B34650500C7D044 /* VBottomMenuSelf.m */; };
 		54D1E6DD1B346CB300C7D044 /* CLEShoppingReviewerHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6DC1B346CB300C7D044 /* CLEShoppingReviewerHome.m */; };
 		54D1E6E11B346D9000C7D044 /* CLCreatePhantasm.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6E01B346D9000C7D044 /* CLCreatePhantasm.m */; };
 		54D1E6E51B346E8900C7D044 /* CLEShoppingSearcherHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6E41B346E8900C7D044 /* CLEShoppingSearcherHome.m */; };
+		54D1E6E81B3472E000C7D044 /* VEShoppingReviewerWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6E71B3472E000C7D044 /* VEShoppingReviewerWrite.m */; };
 		8A1D9CB91761E219004F4FCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CB81761E219004F4FCD /* UIKit.framework */; };
 		8A1D9CBB1761E219004F4FCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CBA1761E219004F4FCD /* Foundation.framework */; };
 		8A1D9CBD1761E219004F4FCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CBC1761E219004F4FCD /* CoreGraphics.framework */; };
@@ -430,20 +431,22 @@
 		54D1E6CA1B3457E700C7D044 /* CLRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLRegister.m; sourceTree = "<group>"; };
 		54D1E6CC1B34586100C7D044 /* CLHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLHome.h; sourceTree = "<group>"; };
 		54D1E6CD1B34586100C7D044 /* CLHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLHome.m; sourceTree = "<group>"; };
-		54D1E6CF1B3464CE00C7D044 /* BottomMenuDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomMenuDynamic.h; sourceTree = "<group>"; };
-		54D1E6D01B3464CE00C7D044 /* BottomMenuDynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomMenuDynamic.m; sourceTree = "<group>"; };
-		54D1E6D21B3464E100C7D044 /* BottomMenuPhantasm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomMenuPhantasm.h; sourceTree = "<group>"; };
-		54D1E6D31B3464E100C7D044 /* BottomMenuPhantasm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomMenuPhantasm.m; sourceTree = "<group>"; };
-		54D1E6D51B3464F400C7D044 /* BottomMenuHello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomMenuHello.h; sourceTree = "<group>"; };
-		54D1E6D61B3464F400C7D044 /* BottomMenuHello.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomMenuHello.m; sourceTree = "<group>"; };
-		54D1E6D81B34650500C7D044 /* BottomMenuSelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomMenuSelf.h; sourceTree = "<group>"; };
-		54D1E6D91B34650500C7D044 /* BottomMenuSelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomMenuSelf.m; sourceTree = "<group>"; };
+		54D1E6CF1B3464CE00C7D044 /* VBottomMenuDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBottomMenuDynamic.h; sourceTree = "<group>"; };
+		54D1E6D01B3464CE00C7D044 /* VBottomMenuDynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBottomMenuDynamic.m; sourceTree = "<group>"; };
+		54D1E6D21B3464E100C7D044 /* VBottomMenuPhantasm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBottomMenuPhantasm.h; sourceTree = "<group>"; };
+		54D1E6D31B3464E100C7D044 /* VBottomMenuPhantasm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBottomMenuPhantasm.m; sourceTree = "<group>"; };
+		54D1E6D51B3464F400C7D044 /* VBottomMenuHello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBottomMenuHello.h; sourceTree = "<group>"; };
+		54D1E6D61B3464F400C7D044 /* VBottomMenuHello.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBottomMenuHello.m; sourceTree = "<group>"; };
+		54D1E6D81B34650500C7D044 /* VBottomMenuSelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBottomMenuSelf.h; sourceTree = "<group>"; };
+		54D1E6D91B34650500C7D044 /* VBottomMenuSelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBottomMenuSelf.m; sourceTree = "<group>"; };
 		54D1E6DB1B346CB300C7D044 /* CLEShoppingReviewerHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLEShoppingReviewerHome.h; sourceTree = "<group>"; };
 		54D1E6DC1B346CB300C7D044 /* CLEShoppingReviewerHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLEShoppingReviewerHome.m; sourceTree = "<group>"; };
 		54D1E6DF1B346D9000C7D044 /* CLCreatePhantasm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCreatePhantasm.h; sourceTree = "<group>"; };
 		54D1E6E01B346D9000C7D044 /* CLCreatePhantasm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCreatePhantasm.m; sourceTree = "<group>"; };
 		54D1E6E31B346E8900C7D044 /* CLEShoppingSearcherHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLEShoppingSearcherHome.h; sourceTree = "<group>"; };
 		54D1E6E41B346E8900C7D044 /* CLEShoppingSearcherHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLEShoppingSearcherHome.m; sourceTree = "<group>"; };
+		54D1E6E61B3472E000C7D044 /* VEShoppingReviewerWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VEShoppingReviewerWrite.h; sourceTree = "<group>"; };
+		54D1E6E71B3472E000C7D044 /* VEShoppingReviewerWrite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VEShoppingReviewerWrite.m; sourceTree = "<group>"; };
 		8A1D9CB41761E219004F4FCD /* MyClones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyClones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1D9CB81761E219004F4FCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8A1D9CBA1761E219004F4FCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1109,14 +1112,14 @@
 				54D1E6CA1B3457E700C7D044 /* CLRegister.m */,
 				54D1E6CC1B34586100C7D044 /* CLHome.h */,
 				54D1E6CD1B34586100C7D044 /* CLHome.m */,
-				54D1E6CF1B3464CE00C7D044 /* BottomMenuDynamic.h */,
-				54D1E6D01B3464CE00C7D044 /* BottomMenuDynamic.m */,
-				54D1E6D21B3464E100C7D044 /* BottomMenuPhantasm.h */,
-				54D1E6D31B3464E100C7D044 /* BottomMenuPhantasm.m */,
-				54D1E6D51B3464F400C7D044 /* BottomMenuHello.h */,
-				54D1E6D61B3464F400C7D044 /* BottomMenuHello.m */,
-				54D1E6D81B34650500C7D044 /* BottomMenuSelf.h */,
-				54D1E6D91B34650500C7D044 /* BottomMenuSelf.m */,
+				54D1E6CF1B3464CE00C7D044 /* VBottomMenuDynamic.h */,
+				54D1E6D01B3464CE00C7D044 /* VBottomMenuDynamic.m */,
+				54D1E6D21B3464E100C7D044 /* VBottomMenuPhantasm.h */,
+				54D1E6D31B3464E100C7D044 /* VBottomMenuPhantasm.m */,
+				54D1E6D51B3464F400C7D044 /* VBottomMenuHello.h */,
+				54D1E6D61B3464F400C7D044 /* VBottomMenuHello.m */,
+				54D1E6D81B34650500C7D044 /* VBottomMenuSelf.h */,
+				54D1E6D91B34650500C7D044 /* VBottomMenuSelf.m */,
 				54D1E6DF1B346D9000C7D044 /* CLCreatePhantasm.h */,
 				54D1E6E01B346D9000C7D044 /* CLCreatePhantasm.m */,
 			);
@@ -1150,6 +1153,8 @@
 			children = (
 				54D1E6DB1B346CB300C7D044 /* CLEShoppingReviewerHome.h */,
 				54D1E6DC1B346CB300C7D044 /* CLEShoppingReviewerHome.m */,
+				54D1E6E61B3472E000C7D044 /* VEShoppingReviewerWrite.h */,
+				54D1E6E71B3472E000C7D044 /* VEShoppingReviewerWrite.m */,
 			);
 			name = EShoppingReviewer;
 			sourceTree = "<group>";
@@ -1798,6 +1803,7 @@
 				8AEF752F1761E9DE00819D78 /* ASIHTTPRequest.m in Sources */,
 				1A853C781A6F479100D8B321 /* UIView+convenience.m in Sources */,
 				541FBF451B33D7DE0028190A /* SlideNavigationContorllerAnimatorFade.m in Sources */,
+				54D1E6E81B3472E000C7D044 /* VEShoppingReviewerWrite.m in Sources */,
 				8AEF75301761E9DE00819D78 /* ASIInputStream.m in Sources */,
 				541FBF371B33D7DE0028190A /* JsonResponseParser.m in Sources */,
 				8AEF75311761E9DE00819D78 /* ASINetworkQueue.m in Sources */,
@@ -1811,12 +1817,12 @@
 				8AEF75371761E9DE00819D78 /* NSAttributedString+Attributes.m in Sources */,
 				8AEF75381761E9DE00819D78 /* OHAttributedLabel.m in Sources */,
 				541FBF381B33D7DE0028190A /* LoginResponseParser.m in Sources */,
-				54D1E6D11B3464CE00C7D044 /* BottomMenuDynamic.m in Sources */,
+				54D1E6D11B3464CE00C7D044 /* VBottomMenuDynamic.m in Sources */,
 				54D1E6CB1B3457E700C7D044 /* CLRegister.m in Sources */,
 				541FBF301B33D7DE0028190A /* AppDelegate.m in Sources */,
 				541FBF5C1B3403410028190A /* HttpMgr.m in Sources */,
 				541FBF4B1B33D7DE0028190A /* SlideNavigationController.m in Sources */,
-				54D1E6D71B3464F400C7D044 /* BottomMenuHello.m in Sources */,
+				54D1E6D71B3464F400C7D044 /* VBottomMenuHello.m in Sources */,
 				1A853C761A6F479100D8B321 /* NSMutableArray+convenience.m in Sources */,
 				8AEF75391761E9DE00819D78 /* Reachability.m in Sources */,
 				8AEF753A1761E9DE00819D78 /* NSObject+JSON.m in Sources */,
@@ -1878,9 +1884,9 @@
 				8AEF755F1761E9DE00819D78 /* Emoji.m in Sources */,
 				8AEF75611761E9DE00819D78 /* EmojiView.m in Sources */,
 				1AC597061A5BB9A10048C7F4 /* NIDropDown.m in Sources */,
-				54D1E6DA1B34650500C7D044 /* BottomMenuSelf.m in Sources */,
+				54D1E6DA1B34650500C7D044 /* VBottomMenuSelf.m in Sources */,
 				8AEF75621761E9DE00819D78 /* FaceScrollView.m in Sources */,
-				54D1E6D41B3464E100C7D044 /* BottomMenuPhantasm.m in Sources */,
+				54D1E6D41B3464E100C7D044 /* VBottomMenuPhantasm.m in Sources */,
 				54D1E6E11B346D9000C7D044 /* CLCreatePhantasm.m in Sources */,
 				8AEF75631761E9DE00819D78 /* FaceView.m in Sources */,
 				541FBF391B33D7DE0028190A /* RequestResponseParser.m in Sources */,

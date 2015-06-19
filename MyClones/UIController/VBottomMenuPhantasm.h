@@ -1,5 +1,5 @@
 //
-//  BottomMenuPhantasm.h
+//  VBottomMenuPhantasm.h
 //  MyClones
 //
 //  Created by lyx on 15/6/19.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BottomMenuPhantasm : UIView
+@interface VBottomMenuPhantasm : UIView
 
 -(void)onClickEShoppingReviewer:(id)sender;
 -(void)onClickEShoppingSearcher:(id)sender;
