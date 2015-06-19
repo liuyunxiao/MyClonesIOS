@@ -1,0 +1,25 @@
+//
+// Prefix header for all source files of the 'Loan' target in the 'Loan' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #define ALLOW_IPHONE_SPECIAL_CASES 1
+
+    #import "Util.h"
+    #import "UI.h"
+    #import "DataEngine.h"
+
+    #define CANCEL_AND_RELEASE_TASK(task) if(task!=nil){[task cancel]; [task release]; task=nil;}
+
+    #define RELEASE_OBJECT(obj) [obj release]; obj = nil
+
+    #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
+#endif
