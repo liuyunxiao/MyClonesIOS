@@ -30,38 +30,3 @@
 }
 @end
 
-@implementation RevSaveTwoAuthClassmateInfo
--(void)dealloc
-{
-    [_linkPhone release];
-    [_linkName release];
-    [_relationName release];
-    [super dealloc];
-}
-@end
-
-@implementation RevSaveTwoAuthClassmate
--(void)dealloc
-{
-    [_content release];
-    [super dealloc];
-}
-@end
-
-@implementation RevQueryTwoAuthClassmateInfo
--(void)dealloc
-{
-    [_linkPhone release];
-    [_linkName release];
-    [_relationName release];
-    [super dealloc];
-}
-@end
-
-@implementation RevQueryTwoAuthClassmate
--(void)dealloc
-{
-    [_content release];
-    [super dealloc];
-}
-@end

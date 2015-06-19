@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BD67C550-A3F4-4B74-92AD-535FF7E1FB78</string>
+	<key>IDESourceControlProjectName</key>
+	<string>loan</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9C7464B62BCB64572238D521CBA8177A6172073C</key>
+		<string>https://github.com/liuyunxiao/MyClonesIOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>loan.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9C7464B62BCB64572238D521CBA8177A6172073C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/liuyunxiao/MyClonesIOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9C7464B62BCB64572238D521CBA8177A6172073C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9C7464B62BCB64572238D521CBA8177A6172073C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyClonesIOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

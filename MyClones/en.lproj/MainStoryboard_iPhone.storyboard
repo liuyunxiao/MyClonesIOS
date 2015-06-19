@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-2255" y="-77"/>
         </scene>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="dyh-lh-VAv">
             <objects>
-                <viewController id="IpY-2h-tBn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CLLogin" id="IpY-2h-tBn" customClass="CLLogin" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="luk-Nz-Auz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
