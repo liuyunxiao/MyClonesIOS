@@ -16,7 +16,7 @@
 
 
 //#define kHostUrl                        @"http://183.129.236.18:8888/fyd/api/v1/"
-#define kHostUrl                        @"http://192.168.0.117:3000/"
+#define kHostUrl                        @"http://192.168.1.110:3000/"
 //#define kHostUrl                        @"http://192.168.1.53:8888/fyd_2015.6.8/api/v1/"
 //#define kHostUrl                        @"http://api.fuyidai.me/fyd/api/v1/"
 

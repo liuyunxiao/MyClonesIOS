@@ -9,9 +9,22 @@
 #import "NSSingleton.h"
 #import "Task.h"
 
-@interface HttpMgr : NSSingleton
+@interface HttpCmdData : NSObject
+{
+}
+@property(nonatomic, retain)NSString    *reqURL;
+@property(nonatomic, retain)NSString    *name;
+@property(nonatomic, retain)NSString    *resClass;
+@end
 
+@interface HttpMgr : NSSingleton
+{
+}
+
+-(void)SetInitData:(NSString*)baseURL port:(NSString*)port;
+-(void)RegisterAllRequestData;
+-(void)RegisterRequestData:(NSString*)name reqURL:(NSString*)reqURL resClass:(NSString*)resClass;
 
 //发送请求（JModel解析)
-- (Task *)send:(NSString*)responseClass data:(NSDictionary*)dicData observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block context:(id)aContext;
+- (Task *)send:(NSString*)name data:(NSDictionary*)dicData observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block;
 @end

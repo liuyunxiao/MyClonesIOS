@@ -16,6 +16,6 @@
 }
 
 
--(void)onClickLogin:(id)sender;
--(void)onClickRegister:(id)sender;
+-(IBAction)onClickLogin:(id)sender;
+-(IBAction)onClickRegister:(id)sender;
 @end

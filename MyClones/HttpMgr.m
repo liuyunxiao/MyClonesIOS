@@ -9,24 +9,150 @@
 #import "HttpMgr.h"
 #import "HttpRequestTask.h"
 #import "HttpDownloadTask.h"
+#import "Common.h"
 
+@interface HttpCmdData ()
+{
+    NSString        *reqURL_;
+    NSString        *name_;
+    NSString        *resClass_;
+}
+@end
+
+@implementation HttpCmdData
+@synthesize reqURL = reqURL_;
+@synthesize name = name_;
+@synthesize resClass = resClass_;
+
+@end
+
+@interface HttpMgr ()
+{
+    NSString                *baseURL_;
+    NSString                *port_;
+    NSMutableDictionary     *dicCmdData_;
+    NSString                *mainURL_;
+}
+@end
 
 @implementation HttpMgr
-- (Task *)send:(NSString*)responseClass data:(NSDictionary*)dicData observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block context:(id)aContext
+
+- (id)init
+{
+    self = [super init];
+    if (self != nil)
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSetCookieNotification:) name:kSetCookieNotification object:nil];
+        
+        [self RegisterAllRequestData];
+    }
+    
+    return self;
+}
+
+- (NSArray *)cookies
+{
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:HTTP_Url]];
+    if ([cookies count] == 0)
+    {
+        NSDictionary *properties = [[NSUserDefaults standardUserDefaults] objectForKey:Cach_Key_CookieProperties];
+        if(properties)
+            cookies = [NSArray arrayWithObject:[NSHTTPCookie cookieWithProperties:properties]];
+    }
+    
+    return cookies;
+}
+
+- (void)onSetCookieNotification:(NSNotification *)aNotification
+{
+    // Save the cookie
+    NSArray *cookies = [aNotification.userInfo objectForKey:@"cookies"];
+    if ([cookies count] == 0)
+    {
+        return;
+    }
+    
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies:cookies forURL:[NSURL URLWithString:HTTP_Url] mainDocumentURL:nil];
+    
+    for(int i=0;i<[cookies count];i++)
+    {
+        NSHTTPCookie *cookie = [cookies objectAtIndex:i];
+        NSDictionary *properties = cookie.properties;
+        NSString *name=[properties objectForKey:@"Name"];
+        if([name isEqualToString:@"JSESSIONID"])
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:properties forKey:Cach_Key_CookieProperties];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }else if([name isEqualToString:@"systemtime"])
+        {
+            NSString *systemtime=[properties objectForKey:@"Value"];
+            NSLog(@"%@",systemtime);
+            if(systemtime!=nil)
+                [[RunInfo sharedInstance] setSystemTime:systemtime];
+            
+        }
+    }
+}
+
+-(void)SetInitData:(NSString*)baseURL port:(NSString*)port
+{
+    baseURL_ = baseURL;
+    port_ = port;
+    mainURL_ = [[NSString alloc] initWithFormat:@"http://%@:%@/", baseURL, port];
+    [mainURL_ retain];
+}
+
+-(void)RegisterAllRequestData
+{
+    if(!dicCmdData_)
+    {
+        dicCmdData_ = [[NSMutableDictionary alloc] init];
+    }
+    else
+    {
+        [dicCmdData_ removeAllObjects];
+    }
+    
+    [self RegisterRequestData:@"SendLogin" reqURL:@"account/login" resClass:@"RevBase"];
+}
+
+-(void)RegisterRequestData:(NSString*)name reqURL:(NSString*)reqURL resClass:(NSString*)resClass
+{
+    HttpCmdData *data = [[HttpCmdData alloc] init];
+    data.name = name;
+    data.reqURL = reqURL;
+    data.resClass = resClass;
+    
+    [dicCmdData_ setObject:data forKey:name];
+}
+
+- (Task *)send:(NSString*)name data:(NSDictionary*)dicData observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block
 {
     NSParameterAssert(dicData!=nil);
+    HttpCmdData *data = [dicCmdData_ objectForKey:name];
+    if(!data)
+    {
+        return nil;
+    }
     
-    HttpRequestTask *task = [[HttpRequestTask alloc] initWithObserver:aObserver selector:aSelector context:aContext];
+    HttpRequestTask *task = [[HttpRequestTask alloc] initWithObserver:aObserver selector:aSelector context:nil];
     
-    [task setResponseParserClassName:responseClass];
+    [task setModelClassName:data.resClass];
+    [task setResponseParserClassName:@"JModelResponseParser"];
     
-    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:kLoginUrl]];
+    NSString *strURl = [NSString stringWithFormat:@"%@%@", mainURL_, data.reqURL];
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:strURl]];
+    
     [request setRequestMethod:@"POST"];
-    
+    //[request setRequestCookies:[NSMutableArray arrayWithArray:[self cookies]]];
+
     for(NSString* key in dicData)
     {
-        [request setPostValue:dicData[key]  forKey:key];
+        [request setPostValue:[dicData objectForKey:key]  forKey:key];
     }
+    
+    //[request setPostValue:@"test"  forKey:@"account"];
+    //[request setPostValue:@"1231321"  forKey:@"password"];
     [task setRequest:request];
     [request release];
     if(block)

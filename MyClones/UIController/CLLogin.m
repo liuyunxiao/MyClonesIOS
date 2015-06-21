@@ -27,7 +27,10 @@
 
 -(void)onRevLogin:(FBTaskResult *)aResult context:(id)aContext
 {
+    [[MIndicatorView sharedInstance] hide];
     RevBase *rev = aResult.resultValue;
+    if(!rev)
+        return;
     if(rev.resultCode == EHRC_Success)
     {
         if(![SlideNavigationController pushViewController:@"CLHome" animated:YES])
@@ -43,16 +46,20 @@
     CANCEL_AND_RELEASE_TASK(taskLogin);
 }
 
--(void)onClickLogin:(id)sender
+-(IBAction)onClickLogin:(id)sender
 {
+    if(!texAccountName.text || [texAccountName.text isEqualToString:@""] ||
+       !texPassword.text || [texPassword.text isEqualToString:@""])
+        return;
+    
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:texAccountName.text forKey:@"account"];
-    [dic setObject:texPassword forKey:@"password"];
+    [dic setObject:texPassword.text forKey:@"password"];
     
-    taskLogin = [[HttpMgr sharedInstance] send:@"RevLogin" data:dic observer:self selector:@selector(onBillsResult:context:) block:YES context:nil];
+    taskLogin = [[HttpMgr sharedInstance] send:@"SendLogin" data:dic observer:self selector:@selector(onRevLogin:context:) block:YES];
 }
 
--(void)onClickRegister:(id)sender
+-(IBAction)onClickRegister:(id)sender
 {
     if(![SlideNavigationController pushViewController:@"CLRegister" animated:YES])
     {

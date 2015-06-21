@@ -25,7 +25,7 @@
     {
         result =  [FBTaskResult resultWithErrorCode:-1 description:@"异常"];
     }
-    else if(model.resultCode != 1)
+    else if(model.resultCode != EHRC_Success)
     {
         result =  [FBTaskResult resultWithErrorCode:model.resultCode description:model.resultMsg];
     }
