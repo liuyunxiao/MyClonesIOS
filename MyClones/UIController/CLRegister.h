@@ -9,5 +9,16 @@
 #import "BaseViewController.h"
 
 @interface CLRegister : BaseViewController
+{
+    IBOutlet    UITextField         *texAccount;
+    IBOutlet    UITextField         *texPassword;
+    IBOutlet    UITextField         *texConformPassword;
+    IBOutlet    UITextField         *texIdCard;
+    IBOutlet    UITextField         *texPhoneCode;
+    IBOutlet    UITextField         *texPhone;
+}
+
+-(IBAction)onClickSummit:(id)sender;
+-(IBAction)onClickRequireCode:(id)sender;
 
 @end

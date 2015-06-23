@@ -114,6 +114,9 @@
     }
     
     [self RegisterRequestData:@"SendLogin" reqURL:@"account/login" resClass:@"RevBase"];
+    [self RegisterRequestData:@"SendRegister" reqURL:@"account/register" resClass:@"RevBase"];
+    [self RegisterRequestData:@"SendPhoneCode" reqURL:@"account/phonecode" resClass:@"RevBase"];
+    
 }
 
 -(void)RegisterRequestData:(NSString*)name reqURL:(NSString*)reqURL resClass:(NSString*)resClass
@@ -144,13 +147,18 @@
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:strURl]];
     
     [request setRequestMethod:@"POST"];
-    //[request setRequestCookies:[NSMutableArray arrayWithArray:[self cookies]]];
+    //todo?
+    if(![name isEqualToString:@"SendLogin"])
+        [request setRequestCookies:[NSMutableArray arrayWithArray:[self cookies]]];
 
-    for(NSString* key in dicData)
+    if(dicData)
     {
-        [request setPostValue:[dicData objectForKey:key]  forKey:key];
+        for(NSString* key in dicData)
+        {
+            [request setPostValue:[dicData objectForKey:key]  forKey:key];
+        }
     }
-    
+
     //[request setPostValue:@"test"  forKey:@"account"];
     //[request setPostValue:@"1231321"  forKey:@"password"];
     [task setRequest:request];
@@ -160,6 +168,7 @@
         [[MIndicatorView sharedInstance] showWithTitle:@"请稍后..." animated:YES];
     }
     [task start];
+    
     return [task autorelease];
 }
 

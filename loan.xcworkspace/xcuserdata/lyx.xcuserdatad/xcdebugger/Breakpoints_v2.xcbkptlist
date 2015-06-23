@@ -479,11 +479,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyClones/UIController/CLLogin.m"
-            timestampString = "456589808.991115"
+            timestampString = "456743672.122993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-dealloc"
             landmarkType = "5">
          </BreakpointContent>
@@ -533,22 +533,6 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "-parse:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyClones/UIController/CLLogin.m"
-            timestampString = "456589808.991115"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-onRevLogin:context:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -635,7 +619,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyClones/HttpMgr.m"
@@ -651,16 +635,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyClones/DataEngine/ResponseParsers/JModelResponseParser.m"
-            timestampString = "456594638.306783"
+            filePath = "MyClones/UIController/CLLogin.m"
+            timestampString = "456743672.122993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "-parse:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-onRevLogin:context:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -670,13 +654,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyClones/UIController/CLLogin.m"
-            timestampString = "456595054.3818"
+            filePath = "MyClones/DataEngine/Tasks/HttpRequestTask.m"
+            timestampString = "456719498.395183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-onRevLogin:context:"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-cancel"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
