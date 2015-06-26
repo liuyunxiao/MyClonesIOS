@@ -355,7 +355,7 @@ MIndicatorView *gIndicatorView=nil;
     
     [customView_ setAlpha:1];
     if (!aAnimated) {
-        [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(hide) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(hide) userInfo:nil repeats:NO];
     }
 	[view addSubview:gIndicatorView];
 
@@ -365,7 +365,8 @@ MIndicatorView *gIndicatorView=nil;
 	if (customView_.alpha == 0.0) {
 		return;
 	}
-	    
+    
+    NSLog(@"jfldsjfl");
     [UIView animateWithDuration:0.5f animations:^{
         [customView_ setAlpha:0.f];
     } completion:^(BOOL finished) {

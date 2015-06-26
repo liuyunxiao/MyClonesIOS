@@ -9,14 +9,17 @@
 #import "BaseViewController.h"
 #import "Common.h"
 
-@interface CLHome : BaseViewController
+@interface CLHome : UITabBarController
 {
     IBOutlet    UIView      *viewBottomMenu;
     
     EUIBottomType           curSelBottomMenu;
     
     NSMutableArray          *viewPages;
+    
+    BOOL                    bLogin;
 }
 
 -(void)onClickBottomMenum:(id)sender;
+-(IBAction)onClickText:(id)sender;
 @end

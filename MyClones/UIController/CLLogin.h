@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface CLLogin : BaseViewController
+@interface CLLogin : UIViewController
 {
     IBOutlet    UITextField         *texAccountName;
     IBOutlet    UITextField         *texPassword;

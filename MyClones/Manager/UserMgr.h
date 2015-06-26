@@ -15,7 +15,7 @@
     NSString        *account;
     EAccountType    accountType;
     NSString        *password;
-    
-    
 }
+
+-(BOOL)isLogin;
 @end

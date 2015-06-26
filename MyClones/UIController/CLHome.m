@@ -7,13 +7,42 @@
 //
 
 #import "CLHome.h"
+#import "ContentViewController.h"
 
 
 @implementation CLHome
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if(!bLogin)
+    {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
+                                                                 bundle: nil];
+        UIViewController *vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"NavLogin"];
+        
+        [vc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [self presentViewController:vc animated:NO completion:^(void){
+            
+        }];
+        bLogin = YES;
+    }
+    
+}
+
+
+
 -(void)viewDidLoad
 {
+    bLogin = NO;
+    //[self.view setHidden:YES];
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:Event_Login object:nil queue:nil usingBlock:^(NSNotification *note) {
+    }];
+    
+    return;
     viewPages = [[NSMutableArray alloc] init];
     
     UIView* viewDynamic = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuDynamic" owner:nil options:nil] lastObject];
@@ -54,5 +83,17 @@
             [view setHidden:YES];
         }
     }
+}
+
+-(IBAction)onClickText:(id)sender
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
+                                                             bundle: nil];
+    UIViewController *vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"CLLogin"];
+    
+    [vc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:vc animated:NO completion:^(void){
+        
+    }];
 }
 @end

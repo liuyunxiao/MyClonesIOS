@@ -14,6 +14,8 @@
 
 #define Cach_Key_CookieProperties  @"Cach_Key_CookieProperties"
 
+#define Event_Login     @"Event_Login"
+
 typedef enum {
     EAT_Phone,
     EAT_Email,

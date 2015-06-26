@@ -6,8 +6,9 @@
 //  Copyright (c) 2015年 Zhenwei. All rights reserved.
 //
 
-#import "BaseViewController.h"
 
-@interface CLCreatePhantasm : BaseViewController
-
+@interface CLPhantasmCreate : UIViewController
+{
+    IBOutlet UINavigationItem        *navBar;
+}
 @end

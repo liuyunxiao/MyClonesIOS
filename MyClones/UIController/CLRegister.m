@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "HttpMgr.h"
 #import "DataModel.h"
+#import "SlideNavigationController+Utils.h"
 
 @interface CLRegister ()
 {
@@ -22,25 +23,36 @@
 
 @implementation CLRegister
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [inputHelper setupInputHelperForView:self.view withDismissType:InputHelperDismissTypeTapGusture];
+}
+
 
 -(void)onRevRegister:(FBTaskResult *)aResult context:(id)aContext
 {
     [[MIndicatorView sharedInstance] hide];
     RevBase *rev = aResult.resultValue;
     if(!rev)
+    {
+        taskRegister_ = nil;
         return;
+    }
+    
     if(rev.resultCode == EHRC_Success)
     {
-        //        if(![SlideNavigationController pushViewController:@"CLHome" animated:YES])
-        //        {
-        //
-        //        }
+        if(![SlideNavigationController pushViewController:@"CLHome" animated:YES])
+        {
+            
+        }
     }
     else
     {
-        
+        [[MIndicatorView sharedInstance] showWithTitle:aResult.errDesc animated:NO];
     }
     
+    taskRegister_ = nil;
     //NSLog([taskLogin_ retainCount]);
     //CANCEL_AND_RELEASE_TASK(taskLogin_);
 }
@@ -58,6 +70,7 @@
     {
         taskRegister_ = [[HttpMgr sharedInstance] send:@"SendRegister" data:dic observer:self selector:@selector(onRevRegister:context:) block:YES];
     }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)onRevPhoneCode:(FBTaskResult *)aResult context:(id)aContext

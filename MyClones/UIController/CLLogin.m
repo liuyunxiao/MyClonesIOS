@@ -10,6 +10,8 @@
 #import "HttpMgr.h"
 #import "DataModel.h"
 #import "SlideNavigationController+Utils.h"
+#import "CLHome.h"
+#import "ContentViewController.h"
 
 @interface CLLogin ()
 {
@@ -22,31 +24,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.navigationController.navigationBar setHidden:YES];
+    [inputHelper setupInputHelperForView:self.view withDismissType:InputHelperDismissTypeTapGusture];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setHidden:NO];
+    [inputHelper dismissInputHelper];
 }
 
 -(void)onRevLogin:(FBTaskResult *)aResult context:(id)aContext
 {
     [[MIndicatorView sharedInstance] hide];
     RevBase *rev = aResult.resultValue;
-    if(!rev)
+    if(!rev || rev.resultCode != EHRC_Success)
     {
+        [[MIndicatorView sharedInstance] showWithTitle:aResult.errDesc animated:NO];
         taskLogin_ = nil;
         return;
     }
-    if(rev.resultCode == EHRC_Success)
-    {
-//        if(![SlideNavigationController pushViewController:@"CLHome" animated:YES])
-//        {
-//            
-//        }
-    }
-    else
-    {
+    [[NSNotificationCenter defaultCenter] postNotificationName:Event_Login object:nil];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
         
-    }
+    }];
+    
     taskLogin_ = nil;
-    //CANCEL_AND_RELEASE_TASK(taskLogin_);
 }
 
 -(void)sendLogin:(NSMutableDictionary*)dic
@@ -76,11 +88,19 @@
 //    {
 //        
 //    }
+    
+//    UIStoryboard *board = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+//    
+//    // 获取故事板中某个View
+//    UIViewController *next = [board instantiateViewControllerWithIdentifier:@"CLRegister"];
+//    
+//    // 跳转
+//    [self presentModalViewController:next animated:NO];
 }
 
 -(void)dealloc
 {
-    CANCEL_AND_RELEASE_TASK(taskLogin_);
+    //CANCEL_AND_RELEASE_TASK(taskLogin_);
     [texPassword release];
     [texAccountName release];
     

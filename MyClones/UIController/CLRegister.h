@@ -8,12 +8,11 @@
 
 #import "BaseViewController.h"
 
-@interface CLRegister : BaseViewController
+@interface CLRegister : UIViewController
 {
     IBOutlet    UITextField         *texAccount;
     IBOutlet    UITextField         *texPassword;
     IBOutlet    UITextField         *texConformPassword;
-    IBOutlet    UITextField         *texIdCard;
     IBOutlet    UITextField         *texPhoneCode;
     IBOutlet    UITextField         *texPhone;
 }
