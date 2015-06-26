@@ -105,7 +105,6 @@
 		547FF6211B0C4DF0003C55DA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547FF61C1B0C4B32003C55DA /* OpenGLES.framework */; };
 		547FF62D1B0C504C003C55DA /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 547FF62A1B0C504C003C55DA /* CycleScrollView.m */; };
 		547FF62E1B0C504C003C55DA /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 547FF62C1B0C504C003C55DA /* NSTimer+Addition.m */; };
-		548889751B39AA52006F8B97 /* VBottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548889741B39AA52006F8B97 /* VBottomMenu.xib */; };
 		54CBCB3D1B3C0E4000C33525 /* AKTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CBCB311B3C0E4000C33525 /* AKTab.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		54CBCB3E1B3C0E4000C33525 /* AKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CBCB331B3C0E4000C33525 /* AKTabBar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		54CBCB3F1B3C0E4000C33525 /* AKTabBarController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 54CBCB341B3C0E4000C33525 /* AKTabBarController.bundle */; };
@@ -122,7 +121,10 @@
 		54CF53721B3D2A5500C7C2BA /* VPhantasmItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54CF53701B3D2A5500C7C2BA /* VPhantasmItem.xib */; };
 		54CF53761B3D362500C7C2BA /* CLPengpeng.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF53751B3D362500C7C2BA /* CLPengpeng.m */; };
 		54CF537D1B3D51A600C7C2BA /* CLEShopping.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF537C1B3D51A600C7C2BA /* CLEShopping.m */; };
-		54CF53801B3D546F00C7C2BA /* CLEShoppingArround.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF537F1B3D546F00C7C2BA /* CLEShoppingArround.m */; };
+		54CF53801B3D546F00C7C2BA /* CLESArround.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF537F1B3D546F00C7C2BA /* CLESArround.m */; };
+		54CF53831B3D558B00C7C2BA /* CLESWriteComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF53821B3D558B00C7C2BA /* CLESWriteComment.m */; };
+		54CF53861B3D55CF00C7C2BA /* CLESMyComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF53851B3D55CF00C7C2BA /* CLESMyComments.m */; };
+		54CF53891B3D55F700C7C2BA /* CLESComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF53881B3D55F700C7C2BA /* CLESComments.m */; };
 		54D1E6C71B3453E100C7D044 /* SlideNavigationController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6C61B3453E100C7D044 /* SlideNavigationController+Utils.m */; };
 		54D1E6CB1B3457E700C7D044 /* CLRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6CA1B3457E700C7D044 /* CLRegister.m */; };
 		54D1E6CE1B34586100C7D044 /* CLHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6CD1B34586100C7D044 /* CLHome.m */; };
@@ -436,7 +438,6 @@
 		547FF62A1B0C504C003C55DA /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		547FF62B1B0C504C003C55DA /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		547FF62C1B0C504C003C55DA /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
-		548889741B39AA52006F8B97 /* VBottomMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VBottomMenu.xib; sourceTree = "<group>"; };
 		54CBCB301B3C0E4000C33525 /* AKTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTab.h; sourceTree = "<group>"; };
 		54CBCB311B3C0E4000C33525 /* AKTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTab.m; sourceTree = "<group>"; };
 		54CBCB321B3C0E4000C33525 /* AKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTabBar.h; sourceTree = "<group>"; };
@@ -467,8 +468,14 @@
 		54CF53751B3D362500C7C2BA /* CLPengpeng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPengpeng.m; sourceTree = "<group>"; };
 		54CF537B1B3D51A600C7C2BA /* CLEShopping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLEShopping.h; sourceTree = "<group>"; };
 		54CF537C1B3D51A600C7C2BA /* CLEShopping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLEShopping.m; sourceTree = "<group>"; };
-		54CF537E1B3D546F00C7C2BA /* CLEShoppingArround.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLEShoppingArround.h; sourceTree = "<group>"; };
-		54CF537F1B3D546F00C7C2BA /* CLEShoppingArround.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLEShoppingArround.m; sourceTree = "<group>"; };
+		54CF537E1B3D546F00C7C2BA /* CLESArround.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLESArround.h; sourceTree = "<group>"; };
+		54CF537F1B3D546F00C7C2BA /* CLESArround.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLESArround.m; sourceTree = "<group>"; };
+		54CF53811B3D558B00C7C2BA /* CLESWriteComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLESWriteComment.h; sourceTree = "<group>"; };
+		54CF53821B3D558B00C7C2BA /* CLESWriteComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLESWriteComment.m; sourceTree = "<group>"; };
+		54CF53841B3D55CF00C7C2BA /* CLESMyComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLESMyComments.h; sourceTree = "<group>"; };
+		54CF53851B3D55CF00C7C2BA /* CLESMyComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLESMyComments.m; sourceTree = "<group>"; };
+		54CF53871B3D55F700C7C2BA /* CLESComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLESComments.h; sourceTree = "<group>"; };
+		54CF53881B3D55F700C7C2BA /* CLESComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLESComments.m; sourceTree = "<group>"; };
 		54D1E6C51B3453E100C7D044 /* SlideNavigationController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlideNavigationController+Utils.h"; sourceTree = "<group>"; };
 		54D1E6C61B3453E100C7D044 /* SlideNavigationController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SlideNavigationController+Utils.m"; sourceTree = "<group>"; };
 		54D1E6C91B3457E700C7D044 /* CLRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLRegister.h; sourceTree = "<group>"; };
@@ -1128,20 +1135,12 @@
 		541FBF601B340B070028190A /* UIController */ = {
 			isa = PBXGroup;
 			children = (
+				54CF538A1B3D561700C7C2BA /* Base */,
 				54CF537A1B3D517B00C7C2BA /* Shopping */,
 				54CF53731B3D359A00C7C2BA /* Pengpeng */,
 				54CF536A1B3D27DE00C7C2BA /* Phantasm */,
 				54CF535D1B3D205900C7C2BA /* Main */,
 				54CF535C1B3D204900C7C2BA /* Account */,
-				54CBCB451B3C180700C33525 /* ContentViewController.h */,
-				54CBCB461B3C180700C33525 /* ContentViewController.m */,
-				54D1E6C51B3453E100C7D044 /* SlideNavigationController+Utils.h */,
-				54D1E6C61B3453E100C7D044 /* SlideNavigationController+Utils.m */,
-				541FBF6C1B3412920028190A /* InputHelper.h */,
-				541FBF6D1B3412920028190A /* InputHelper.m */,
-				541FBF641B340B810028190A /* BaseViewController.h */,
-				541FBF651B340B810028190A /* BaseViewController.m */,
-				548889741B39AA52006F8B97 /* VBottomMenu.xib */,
 			);
 			path = UIController;
 			sourceTree = "<group>";
@@ -1242,10 +1241,31 @@
 			children = (
 				54CF537B1B3D51A600C7C2BA /* CLEShopping.h */,
 				54CF537C1B3D51A600C7C2BA /* CLEShopping.m */,
-				54CF537E1B3D546F00C7C2BA /* CLEShoppingArround.h */,
-				54CF537F1B3D546F00C7C2BA /* CLEShoppingArround.m */,
+				54CF537E1B3D546F00C7C2BA /* CLESArround.h */,
+				54CF537F1B3D546F00C7C2BA /* CLESArround.m */,
+				54CF53811B3D558B00C7C2BA /* CLESWriteComment.h */,
+				54CF53821B3D558B00C7C2BA /* CLESWriteComment.m */,
+				54CF53841B3D55CF00C7C2BA /* CLESMyComments.h */,
+				54CF53851B3D55CF00C7C2BA /* CLESMyComments.m */,
+				54CF53871B3D55F700C7C2BA /* CLESComments.h */,
+				54CF53881B3D55F700C7C2BA /* CLESComments.m */,
 			);
 			name = Shopping;
+			sourceTree = "<group>";
+		};
+		54CF538A1B3D561700C7C2BA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				54CBCB451B3C180700C33525 /* ContentViewController.h */,
+				54CBCB461B3C180700C33525 /* ContentViewController.m */,
+				54D1E6C51B3453E100C7D044 /* SlideNavigationController+Utils.h */,
+				54D1E6C61B3453E100C7D044 /* SlideNavigationController+Utils.m */,
+				541FBF6C1B3412920028190A /* InputHelper.h */,
+				541FBF6D1B3412920028190A /* InputHelper.m */,
+				541FBF641B340B810028190A /* BaseViewController.h */,
+				541FBF651B340B810028190A /* BaseViewController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		8A1D9CA91761E219004F4FCD = {
@@ -1797,7 +1817,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				548889751B39AA52006F8B97 /* VBottomMenu.xib in Resources */,
 				1A1B61BD1A761A180089D6DB /* UMSLoginViewController.xib in Resources */,
 				8AEF75461761E9DE00819D78 /* .gitignore in Resources */,
 				8AEF75471761E9DE00819D78 /* LICENSE in Resources */,
@@ -1938,12 +1957,14 @@
 				8AEF754A1761E9DE00819D78 /* SDWebImageDecoder.m in Sources */,
 				541FBF491B33D7DE0028190A /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				8AEF754B1761E9DE00819D78 /* SDWebImageDownloader.m in Sources */,
+				54CF53891B3D55F700C7C2BA /* CLESComments.m in Sources */,
 				54CF53711B3D2A5500C7C2BA /* VPhantasmItem.m in Sources */,
 				54D1E6C71B3453E100C7D044 /* SlideNavigationController+Utils.m in Sources */,
 				541FBF661B340B810028190A /* BaseViewController.m in Sources */,
 				8AEF754C1761E9DE00819D78 /* SDWebImageManager.m in Sources */,
 				8AEF754D1761E9DE00819D78 /* SDWebImagePrefetcher.m in Sources */,
 				54CF53631B3D21A400C7C2BA /* CLPhantasm.m in Sources */,
+				54CF53861B3D55CF00C7C2BA /* CLESMyComments.m in Sources */,
 				1A3604FA1A66379000437ACE /* FTCoreTextStyle.m in Sources */,
 				54CF53761B3D362500C7C2BA /* CLPengpeng.m in Sources */,
 				8AEF754E1761E9DE00819D78 /* UIButton+WebCache.m in Sources */,
@@ -1970,7 +1991,7 @@
 				541FBF461B33D7DE0028190A /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				8AEF755C1761E9DE00819D78 /* Task.m in Sources */,
 				8AEF755D1761E9DE00819D78 /* BWHorizontalTableView.m in Sources */,
-				54CF53801B3D546F00C7C2BA /* CLEShoppingArround.m in Sources */,
+				54CF53801B3D546F00C7C2BA /* CLESArround.m in Sources */,
 				8AEF755E1761E9DE00819D78 /* BWPagingView.m in Sources */,
 				8AEF755F1761E9DE00819D78 /* Emoji.m in Sources */,
 				8AEF75611761E9DE00819D78 /* EmojiView.m in Sources */,
@@ -2024,6 +2045,7 @@
 				1AF95B7517D48DE300A6D1F6 /* KICropImageView.m in Sources */,
 				541FBF581B33FA5C0028190A /* DbHelper.m in Sources */,
 				1AF95B7617D48DE300A6D1F6 /* UIImage+KIAdditions.m in Sources */,
+				54CF53831B3D558B00C7C2BA /* CLESWriteComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

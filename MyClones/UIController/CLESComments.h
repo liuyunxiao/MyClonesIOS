@@ -1,5 +1,5 @@
 //
-//  CLEShoppingArround.h
+//  CLESComments.h
 //  MyClones
 //
 //  Created by lyx on 15/6/26.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLEShoppingArround : UIViewController
+@interface CLESComments : UIViewController
 
 @end
