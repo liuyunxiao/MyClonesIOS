@@ -116,7 +116,7 @@
     [self RegisterRequestData:@"SendLogin" reqURL:@"account/login" resClass:@"RevBase"];
     [self RegisterRequestData:@"SendRegister" reqURL:@"account/register" resClass:@"RevBase"];
     [self RegisterRequestData:@"SendPhoneCode" reqURL:@"account/phonecode" resClass:@"RevBase"];
-    
+    [self RegisterRequestData:@"SendCheckAccount" reqURL:@"account/checkAccount" resClass:@"RevBase"];
 }
 
 -(void)RegisterRequestData:(NSString*)name reqURL:(NSString*)reqURL resClass:(NSString*)resClass

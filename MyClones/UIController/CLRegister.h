@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface CLRegister : UIViewController
+@interface CLRegister : UIViewController<UITextFieldDelegate>
 {
     IBOutlet    UITextField         *texAccount;
     IBOutlet    UITextField         *texPassword;

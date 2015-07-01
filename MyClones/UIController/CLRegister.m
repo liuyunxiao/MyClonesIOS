@@ -17,16 +17,56 @@
     EAccountType        accountType;
     Task                *taskRegister_;
     Task                *taskPhoneCode_;
+    Task                *taskCheckAccount_;
 }
 
 @end
 
 @implementation CLRegister
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    texPassword.secureTextEntry = YES;
+    texConformPassword.secureTextEntry = YES;
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [inputHelper setupInputHelperForView:self.view withDismissType:InputHelperDismissTypeTapGusture];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if(texAccount == textField)
+    {
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+        [dic setObject:texAccount.text forKey:@"account"];
+        
+        if(taskCheckAccount_ == nil)
+        {
+            taskCheckAccount_ = [[HttpMgr sharedInstance] send:@"SendCheckAccount" data:dic observer:self selector:@selector(onRevCheckAccount:context:) block:YES];
+        }
+    }
+}
+
+-(void)onRevCheckAccount:(FBTaskResult *)aResult context:(id)aContext
+{
+    taskCheckAccount_ = nil;
+    [[MIndicatorView sharedInstance] hide];
+    RevBase *rev = aResult.resultValue;
+    if(!rev)
+        return;
+    
+    if(rev.resultCode == EHRC_Success)
+    {
+        //[[MIndicatorView sharedInstance] showWithTitle:@"账号可用" animated:NO];
+    }
+    else
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:rev.resultMsg animated:NO];
+    }
 }
 
 
@@ -60,6 +100,12 @@
     if(texPassword.text.length == 0)
     {
         [[MIndicatorView sharedInstance] showWithTitle:@"密码不能为空" animated:NO];
+        return;
+    }
+    
+    if(![texPassword.text isEqualToString:texConformPassword.text])
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:@"两次密码输入不一致" animated:NO];
         return;
     }
     
