@@ -32,33 +32,37 @@
 
 -(void)onRevRegister:(FBTaskResult *)aResult context:(id)aContext
 {
+    taskRegister_ = nil;
     [[MIndicatorView sharedInstance] hide];
     RevBase *rev = aResult.resultValue;
     if(!rev)
-    {
-        taskRegister_ = nil;
         return;
-    }
     
     if(rev.resultCode == EHRC_Success)
     {
-        if(![SlideNavigationController pushViewController:@"CLHome" animated:YES])
-        {
-            
-        }
+        [self.navigationController popViewControllerAnimated:YES];
+        [[MIndicatorView sharedInstance] showWithTitle:@"注册成功，请登录" animated:NO];
     }
     else
     {
-        [[MIndicatorView sharedInstance] showWithTitle:aResult.errDesc animated:NO];
+        [[MIndicatorView sharedInstance] showWithTitle:rev.resultMsg animated:NO];
     }
-    
-    taskRegister_ = nil;
-    //NSLog([taskLogin_ retainCount]);
-    //CANCEL_AND_RELEASE_TASK(taskLogin_);
 }
 
 -(IBAction)onClickSummit:(id)sender
 {
+    if(texAccount.text.length == 0)
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:@"账号不能为空" animated:NO];
+        return;
+    }
+    
+    if(texPassword.text.length == 0)
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:@"密码不能为空" animated:NO];
+        return;
+    }
+    
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:texAccount.text forKey:@"account"];
     [dic setObject:texPassword.text forKey:@"password"];
@@ -70,7 +74,7 @@
     {
         taskRegister_ = [[HttpMgr sharedInstance] send:@"SendRegister" data:dic observer:self selector:@selector(onRevRegister:context:) block:YES];
     }
-    [self dismissModalViewControllerAnimated:YES];
+    
 }
 
 -(void)onRevPhoneCode:(FBTaskResult *)aResult context:(id)aContext

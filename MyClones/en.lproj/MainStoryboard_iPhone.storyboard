@@ -216,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="-2478" y="2122"/>
         </scene>
-        <!--Item 2-->
+        <!--我的评论-->
         <scene sceneID="VHV-e8-RLn">
             <objects>
                 <viewController id="nED-1a-dwI" sceneMemberID="viewController">
@@ -225,13 +225,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="et1-9r-GvO"/>
+                    <tabBarItem key="tabBarItem" title="我的评论" id="et1-9r-GvO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T2-eo-dua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1062" y="318"/>
         </scene>
-        <!--Item 1-->
+        <!--周围-->
+        <scene sceneID="12A-Fj-ors">
+            <objects>
+                <viewController id="N1k-qZ-ewP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zwG-Zz-Fis">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="周围" id="ZLy-Ru-KAu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WSM-2Z-STB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1057" y="966"/>
+        </scene>
+        <!--评论-->
         <scene sceneID="3wZ-Sf-4vN">
             <objects>
                 <viewController id="bQD-Gz-jvm" sceneMemberID="viewController">
@@ -240,7 +255,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="xRq-PQ-Z6I"/>
+                    <tabBarItem key="tabBarItem" title="评论" id="xRq-PQ-Z6I"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKY-0J-ZkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -291,6 +306,7 @@
                     <connections>
                         <segue destination="bQD-Gz-jvm" kind="relationship" relationship="viewControllers" id="2MJ-KW-i75"/>
                         <segue destination="nED-1a-dwI" kind="relationship" relationship="viewControllers" id="7tZ-Ay-Wfg"/>
+                        <segue destination="N1k-qZ-ewP" kind="relationship" relationship="viewControllers" id="SQs-58-8NL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6J7-Sw-vWg" userLabel="First Responder" sceneMemberID="firstResponder"/>

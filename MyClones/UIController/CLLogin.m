@@ -44,21 +44,24 @@
 
 -(void)onRevLogin:(FBTaskResult *)aResult context:(id)aContext
 {
+    taskLogin_ = nil;
     [[MIndicatorView sharedInstance] hide];
     RevBase *rev = aResult.resultValue;
-    if(!rev || rev.resultCode != EHRC_Success)
-    {
-        [[MIndicatorView sharedInstance] showWithTitle:aResult.errDesc animated:NO];
-        taskLogin_ = nil;
+    if(!rev)
         return;
-    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:Event_Login object:nil];
     
-    [self dismissViewControllerAnimated:YES completion:^{
+    if(rev.resultCode == EHRC_Success)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:Event_Login object:nil];
         
-    }];
-    
-    taskLogin_ = nil;
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
+    else
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:rev.resultMsg animated:NO];
+    }
 }
 
 -(void)sendLogin:(NSMutableDictionary*)dic
@@ -71,9 +74,17 @@
 
 -(IBAction)onClickLogin:(id)sender
 {
-//    if(!texAccountName.text || [texAccountName.text isEqualToString:@""] ||
-//       !texPassword.text || [texPassword.text isEqualToString:@""])
-//        return;
+    if(texAccountName.text.length == 0)
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:@"账号不能为空" animated:NO];
+        return;
+    }
+    
+    if(texPassword.text.length == 0)
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:@"密码不能为空" animated:NO];
+        return;
+    }
     
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setObject:texAccountName.text forKey:@"account"];

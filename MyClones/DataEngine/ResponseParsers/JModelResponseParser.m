@@ -25,10 +25,10 @@
     {
         result =  [FBTaskResult resultWithErrorCode:-1 description:@"异常"];
     }
-    else if(model.resultCode != EHRC_Success)
-    {
-        result =  [FBTaskResult resultWithErrorCode:model.resultCode description:model.resultMsg];
-    }
+//    else if(model.resultCode != EHRC_Success)
+//    {
+//        result =  [FBTaskResult resultWithErrorCode:model.resultCode description:model.resultMsg];
+//    }
     else
     {
         result = [FBTaskResult resultWithType:TASK_RESULT_SUCCESS value:model];
