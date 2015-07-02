@@ -213,7 +213,7 @@
             </objects>
             <point key="canvasLocation" x="-2656" y="-765"/>
         </scene>
-        <!--你好-->
+        <!--通信-->
         <scene sceneID="bE1-Ue-dZ8">
             <objects>
                 <viewController storyboardIdentifier="CLHello" id="nJb-fa-ucG" customClass="CLHello" sceneMemberID="viewController">
@@ -222,7 +222,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="你好" id="E6P-Gn-zCF"/>
+                    <tabBarItem key="tabBarItem" title="通信" image="first_selected.png" id="E6P-Gn-zCF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nk5-Uc-PBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -329,7 +329,7 @@
         <scene sceneID="5h9-K9-Cgl">
             <objects>
                 <navigationController id="ew4-LR-xGb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="分身" id="HPs-DX-Bv7"/>
+                    <tabBarItem key="tabBarItem" title="分身" image="second_selected.png" id="HPs-DX-Bv7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qad-ga-AEg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -378,7 +378,7 @@
         <scene sceneID="PzI-fg-3pR">
             <objects>
                 <navigationController storyboardIdentifier="NavPhantasm" id="1xs-HZ-PTQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" id="VqG-4g-Mh2"/>
+                    <tabBarItem key="tabBarItem" title="我" image="second_selected.png" id="VqG-4g-Mh2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qzM-am-6So">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -444,7 +444,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="动态" id="Anl-xo-feC"/>
+                    <tabBarItem key="tabBarItem" title="动态" image="third_selected.png" id="Anl-xo-feC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luW-y3-xCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -489,6 +489,11 @@
             <point key="canvasLocation" x="-3222" y="886"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first_selected.png" width="30" height="30"/>
+        <image name="second_selected.png" width="30" height="30"/>
+        <image name="third_selected.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

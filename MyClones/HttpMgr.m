@@ -117,6 +117,7 @@
     [self RegisterRequestData:@"SendRegister" reqURL:@"account/register" resClass:@"RevBase"];
     [self RegisterRequestData:@"SendPhoneCode" reqURL:@"account/phonecode" resClass:@"RevBase"];
     [self RegisterRequestData:@"SendCheckAccount" reqURL:@"account/checkAccount" resClass:@"RevBase"];
+    [self RegisterRequestData:@"SendQueryDynamicByType" reqURL:@"dynamic/queryDynamicByType" resClass:@"RevBase"];
 }
 
 -(void)RegisterRequestData:(NSString*)name reqURL:(NSString*)reqURL resClass:(NSString*)resClass
@@ -131,7 +132,7 @@
 
 - (Task *)send:(NSString*)name data:(NSDictionary*)dicData observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block
 {
-    NSParameterAssert(dicData!=nil);
+    //NSParameterAssert(dicData!=nil);
     HttpCmdData *data = [dicCmdData_ objectForKey:name];
     if(!data)
     {

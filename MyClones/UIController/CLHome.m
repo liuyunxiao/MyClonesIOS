@@ -8,7 +8,15 @@
 
 #import "CLHome.h"
 #import "ContentViewController.h"
+#import "HttpMgr.h"
+#import "DataModel.h"
 
+@interface CLHome ()
+{
+    Task        *taskQueryDynamicByType;
+}
+
+@end
 
 @implementation CLHome
 
@@ -42,6 +50,10 @@
     self.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserverForName:Event_Login object:nil queue:nil usingBlock:^(NSNotification *note) {
+        if(!taskQueryDynamicByType)
+        {
+            taskQueryDynamicByType = [[HttpMgr sharedInstance] send:@"SendQueryDynamicByType" data:nil observer:self selector:@selector(onRevQueryDynamicByType:context:) block:YES];
+        }
     }];
     
     return;
@@ -62,6 +74,24 @@
     UIView* viewSelf = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuSelf" owner:nil options:nil] lastObject];
     [viewPages addObject:viewSelf];
     [self.view addSubview:viewSelf];
+}
+
+-(void)onRevQueryDynamicByType:(FBTaskResult *)aResult context:(id)aContext
+{
+    taskQueryDynamicByType = nil;
+    [[MIndicatorView sharedInstance] hide];
+    RevBase *rev = aResult.resultValue;
+    if(!rev)
+        return;
+    
+    if(rev.resultCode == EHRC_Success)
+    {
+        
+    }
+    else
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:rev.resultMsg animated:NO];
+    }
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController

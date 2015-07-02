@@ -132,6 +132,9 @@
 		54D23A841B43D45200D21253 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D23A7F1B43D45200D21253 /* RDVTabBar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		54D23A851B43D45200D21253 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D23A811B43D45200D21253 /* RDVTabBarController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		54D23A861B43D45200D21253 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D23A831B43D45200D21253 /* RDVTabBarItem.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		54D45F791B4528D0008F39F7 /* first_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D45F761B4528D0008F39F7 /* first_selected@2x.png */; };
+		54D45F7A1B4528D0008F39F7 /* second_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D45F771B4528D0008F39F7 /* second_selected@2x.png */; };
+		54D45F7B1B4528D0008F39F7 /* third_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D45F781B4528D0008F39F7 /* third_selected@2x.png */; };
 		8A1D9CB91761E219004F4FCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CB81761E219004F4FCD /* UIKit.framework */; };
 		8A1D9CBB1761E219004F4FCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CBA1761E219004F4FCD /* Foundation.framework */; };
 		8A1D9CBD1761E219004F4FCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CBC1761E219004F4FCD /* CoreGraphics.framework */; };
@@ -493,6 +496,9 @@
 		54D23A811B43D45200D21253 /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
 		54D23A821B43D45200D21253 /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
 		54D23A831B43D45200D21253 /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
+		54D45F761B4528D0008F39F7 /* first_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first_selected@2x.png"; sourceTree = "<group>"; };
+		54D45F771B4528D0008F39F7 /* second_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second_selected@2x.png"; sourceTree = "<group>"; };
+		54D45F781B4528D0008F39F7 /* third_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "third_selected@2x.png"; sourceTree = "<group>"; };
 		8A1D9CB41761E219004F4FCD /* MyClones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyClones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1D9CB81761E219004F4FCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8A1D9CBA1761E219004F4FCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1306,9 +1312,20 @@
 			name = Flea;
 			sourceTree = "<group>";
 		};
+		54D45F751B4528BC008F39F7 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				54D45F761B4528D0008F39F7 /* first_selected@2x.png */,
+				54D45F771B4528D0008F39F7 /* second_selected@2x.png */,
+				54D45F781B4528D0008F39F7 /* third_selected@2x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		8A1D9CA91761E219004F4FCD = {
 			isa = PBXGroup;
 			children = (
+				54D45F751B4528BC008F39F7 /* Image */,
 				541FBEF21B33D7DE0028190A /* MyClones */,
 				54629ECF1B3160DD0060C9CF /* mapapi.bundle */,
 				1AA83EFF1868657C005C319D /* libz.dylib */,
@@ -1873,6 +1890,7 @@
 				1A1B61BB1A761A180089D6DB /* UMShareEditViewController.xib in Resources */,
 				1A1B61BC1A761A180089D6DB /* UMShareEditViewControlleriPad.xib in Resources */,
 				54CF53721B3D2A5500C7C2BA /* VPhantasmItem.xib in Resources */,
+				54D45F7B1B4528D0008F39F7 /* third_selected@2x.png in Resources */,
 				54629ED01B3160DD0060C9CF /* mapapi.bundle in Resources */,
 				1A1B61BE1A761A180089D6DB /* UMSnsAccountViewController.xib in Resources */,
 				541FBF4A1B33D7DE0028190A /* menu-button@2x.png in Resources */,
@@ -1886,6 +1904,8 @@
 				1AF95B5917D4715600A6D1F6 /* Default.png in Resources */,
 				1A1B61BA1A761A180089D6DB /* UMSCommentInputControlleriPad.xib in Resources */,
 				1AF95B5A17D4715600A6D1F6 /* Default@2x.png in Resources */,
+				54D45F791B4528D0008F39F7 /* first_selected@2x.png in Resources */,
+				54D45F7A1B4528D0008F39F7 /* second_selected@2x.png in Resources */,
 				1AE121E61A2DAB9500FCB26F /* LTBounceSheet.xib in Resources */,
 				1A4E9FAF17E9EB4B00692C83 /* Icon.png in Resources */,
 				1A1B61B81A761A180089D6DB /* UMSCommentDetailController.xib in Resources */,
