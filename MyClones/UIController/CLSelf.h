@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLSelf : UIViewController
+@interface CLSelf : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end

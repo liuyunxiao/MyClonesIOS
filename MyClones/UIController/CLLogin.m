@@ -46,7 +46,7 @@
 {
     taskLogin_ = nil;
     [[MIndicatorView sharedInstance] hide];
-    RevBase *rev = aResult.resultValue;
+    RevLogin *rev = aResult.resultValue;
     if(!rev)
         return;
     

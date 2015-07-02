@@ -39,6 +39,8 @@
     //[self.view setHidden:YES];
     [super viewDidLoad];
     
+    self.delegate = self;
+    
     [[NSNotificationCenter defaultCenter] addObserverForName:Event_Login object:nil queue:nil usingBlock:^(NSNotification *note) {
     }];
     
@@ -60,6 +62,13 @@
     UIView* viewSelf = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuSelf" owner:nil options:nil] lastObject];
     [viewPages addObject:viewSelf];
     [self.view addSubview:viewSelf];
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    [self.navigationController.navigationBar setHidden:YES];
+    //NSLog(viewController.tabBarItem.title);
+    self.navigationItem.title = viewController.tabBarItem.title;
 }
 
 

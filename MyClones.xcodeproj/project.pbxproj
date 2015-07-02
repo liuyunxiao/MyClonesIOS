@@ -129,6 +129,9 @@
 		54D1E6CB1B3457E700C7D044 /* CLRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6CA1B3457E700C7D044 /* CLRegister.m */; };
 		54D1E6CE1B34586100C7D044 /* CLHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6CD1B34586100C7D044 /* CLHome.m */; };
 		54D1E6E11B346D9000C7D044 /* CLPhantasmCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6E01B346D9000C7D044 /* CLPhantasmCreate.m */; };
+		54D23A841B43D45200D21253 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D23A7F1B43D45200D21253 /* RDVTabBar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		54D23A851B43D45200D21253 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D23A811B43D45200D21253 /* RDVTabBarController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		54D23A861B43D45200D21253 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D23A831B43D45200D21253 /* RDVTabBarItem.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		8A1D9CB91761E219004F4FCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CB81761E219004F4FCD /* UIKit.framework */; };
 		8A1D9CBB1761E219004F4FCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CBA1761E219004F4FCD /* Foundation.framework */; };
 		8A1D9CBD1761E219004F4FCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1D9CBC1761E219004F4FCD /* CoreGraphics.framework */; };
@@ -484,6 +487,12 @@
 		54D1E6CD1B34586100C7D044 /* CLHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLHome.m; sourceTree = "<group>"; };
 		54D1E6DF1B346D9000C7D044 /* CLPhantasmCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPhantasmCreate.h; sourceTree = "<group>"; };
 		54D1E6E01B346D9000C7D044 /* CLPhantasmCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPhantasmCreate.m; sourceTree = "<group>"; };
+		54D23A7E1B43D45200D21253 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
+		54D23A7F1B43D45200D21253 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
+		54D23A801B43D45200D21253 /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
+		54D23A811B43D45200D21253 /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
+		54D23A821B43D45200D21253 /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
+		54D23A831B43D45200D21253 /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
 		8A1D9CB41761E219004F4FCD /* MyClones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyClones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1D9CB81761E219004F4FCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8A1D9CBA1761E219004F4FCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1135,6 +1144,8 @@
 		541FBF601B340B070028190A /* UIController */ = {
 			isa = PBXGroup;
 			children = (
+				54D45F741B44D9B6008F39F7 /* Flea */,
+				54D45F721B44D957008F39F7 /* Rent */,
 				54CF538A1B3D561700C7C2BA /* Base */,
 				54CF537A1B3D517B00C7C2BA /* Shopping */,
 				54CF53731B3D359A00C7C2BA /* Pengpeng */,
@@ -1266,6 +1277,33 @@
 				541FBF651B340B810028190A /* BaseViewController.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		54D23A7D1B43D45200D21253 /* RDVTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				54D23A7E1B43D45200D21253 /* RDVTabBar.h */,
+				54D23A7F1B43D45200D21253 /* RDVTabBar.m */,
+				54D23A801B43D45200D21253 /* RDVTabBarController.h */,
+				54D23A811B43D45200D21253 /* RDVTabBarController.m */,
+				54D23A821B43D45200D21253 /* RDVTabBarItem.h */,
+				54D23A831B43D45200D21253 /* RDVTabBarItem.m */,
+			);
+			path = RDVTabBarController;
+			sourceTree = "<group>";
+		};
+		54D45F721B44D957008F39F7 /* Rent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Rent;
+			sourceTree = "<group>";
+		};
+		54D45F741B44D9B6008F39F7 /* Flea */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flea;
 			sourceTree = "<group>";
 		};
 		8A1D9CA91761E219004F4FCD = {
@@ -1585,6 +1623,7 @@
 		8AEF74E71761E9DE00819D78 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				54D23A7D1B43D45200D21253 /* RDVTabBarController */,
 				54CBCB2F1B3C0E4000C33525 /* AKTabBarController */,
 				547FF6281B0C504C003C55DA /* CycleScrollView */,
 				1A853C6A1A6F479100D8B321 /* Calendar */,
@@ -1894,6 +1933,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A85FC25177A8FCA008A5364 /* HZActivityIndicatorView.m in Sources */,
+				54D23A851B43D45200D21253 /* RDVTabBarController.m in Sources */,
 				541FBF471B33D7DE0028190A /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				8AEF752A1761E9DE00819D78 /* ASIAuthenticationDialog.m in Sources */,
 				541FBF3D1B33D7DE0028190A /* HttpRequestTask.m in Sources */,
@@ -1969,6 +2009,7 @@
 				54CF53761B3D362500C7C2BA /* CLPengpeng.m in Sources */,
 				8AEF754E1761E9DE00819D78 /* UIButton+WebCache.m in Sources */,
 				1A748C0D1AE61D02002926DC /* JYMenuButton.m in Sources */,
+				54D23A861B43D45200D21253 /* RDVTabBarItem.m in Sources */,
 				541FBF3A1B33D7DE0028190A /* RunInfo.m in Sources */,
 				8AEF754F1761E9DE00819D78 /* UIImageView+WebCache.m in Sources */,
 				8AEF75501761E9DE00819D78 /* NSString+MD5Addition.m in Sources */,
@@ -2039,6 +2080,7 @@
 				1A0C02101A8B4973003E0242 /* qrinput.c in Sources */,
 				1AD2C09E1798EA5D000B5FE5 /* SCGIFImageView.m in Sources */,
 				1A0C020C1A8B4973003E0242 /* bitstream.c in Sources */,
+				54D23A841B43D45200D21253 /* RDVTabBar.m in Sources */,
 				1AD78625179A90C700EFE7DF /* RCLabel.m in Sources */,
 				1AC5971E1A5F83610048C7F4 /* DBSphereView.m in Sources */,
 				1AEF4AC317BCAC7F00AA82BE /* MPopoverView.m in Sources */,

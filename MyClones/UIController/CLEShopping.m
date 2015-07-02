@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem.title = @"分身";
+    //self.navigationController.navigationItem.backBarButtonItem.title = @"分身";
     // Do any additional setup after loading the view.
 }
 

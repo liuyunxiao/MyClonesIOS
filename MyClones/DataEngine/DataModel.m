@@ -10,14 +10,8 @@
 
 
 @implementation ModelBase
-
 +(BOOL)propertyIsOptional:(NSString *)propertyName{
     return YES;
-}
-
--(void)dealloc
-{
-    [super dealloc];
 }
 @end
 
@@ -28,5 +22,12 @@
     [_resultMsg release];
     [super dealloc];
 }
+@end
+
+@implementation RevLogin
+//-(void)dealloc
+//{
+//    [super dealloc];
+//}
 @end
 

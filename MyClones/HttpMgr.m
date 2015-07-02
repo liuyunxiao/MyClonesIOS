@@ -98,7 +98,7 @@
 {
     baseURL_ = baseURL;
     port_ = port;
-    mainURL_ = [[NSString alloc] initWithFormat:@"http://%@:%@/", baseURL, port];
+    mainURL_ = [[NSString alloc] initWithFormat:@"%@:%@/", baseURL, port];
     [mainURL_ retain];
 }
 
@@ -113,7 +113,7 @@
         [dicCmdData_ removeAllObjects];
     }
     
-    [self RegisterRequestData:@"SendLogin" reqURL:@"account/login" resClass:@"RevBase"];
+    [self RegisterRequestData:@"SendLogin" reqURL:@"account/login" resClass:@"RevLogin"];
     [self RegisterRequestData:@"SendRegister" reqURL:@"account/register" resClass:@"RevBase"];
     [self RegisterRequestData:@"SendPhoneCode" reqURL:@"account/phonecode" resClass:@"RevBase"];
     [self RegisterRequestData:@"SendCheckAccount" reqURL:@"account/checkAccount" resClass:@"RevBase"];

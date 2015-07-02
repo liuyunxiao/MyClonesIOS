@@ -93,8 +93,10 @@
         vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"CLPengpeng"];
     }
     
-    [self.navigationController pushViewController:vc animated:YES];
-    [self.tabBarController.tabBar setHidden:YES];
+    [self.parentViewController.navigationController pushViewController:vc animated:YES];
+    [self.parentViewController.navigationController.navigationBar setHidden:NO];
+    
+    //[self.tabBarController.tabBar setHidden:YES];
 }
 
 /*

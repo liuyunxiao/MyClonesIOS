@@ -18,7 +18,15 @@
 @property(strong, nonatomic) NSString       *resultMsg;
 @end
 
-
+@interface RevLogin : RevBase
+@property(nonatomic, strong) NSString       *headPic;
+@property(nonatomic, strong) NSString       *nickName;
+@property(nonatomic, strong) NSString       *name;
+@property(nonatomic, strong) NSString       *cardId;
+@property(nonatomic, strong) NSString       *phone;
+@property(nonatomic, assign) int            sex;
+@property(nonatomic, assign) int            age;
+@end
 
 //多个同学关联(新增和修改)
 //@protocol RevSaveTwoAuthClassmateInfo

@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "Common.h"
 
-@interface CLHome : UITabBarController
+@interface CLHome : UITabBarController<UITabBarControllerDelegate>
 {
     IBOutlet    UIView      *viewBottomMenu;
     

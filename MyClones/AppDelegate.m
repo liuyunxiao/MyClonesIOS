@@ -10,6 +10,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "Json.h"
 #import "HttpMgr.h"
+#import "Common.h"
 
 BMKMapManager* _mapManager;
 
@@ -63,7 +64,7 @@ BMKMapManager* _mapManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[HttpMgr sharedInstance] SetInitData:@"127.0.0.1" port:@"3000"];
+    [[HttpMgr sharedInstance] SetInitData:HTTP_Url port:HTTP_Port];
     
 	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
 															 bundle: nil];
