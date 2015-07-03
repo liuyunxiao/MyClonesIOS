@@ -28,6 +28,10 @@
 @property(nonatomic, assign) int            age;
 @end
 
+@interface RevChangeHeadPic : RevBase
+@property(nonatomic, strong) NSString       *headPic;
+@end
+
 //多个同学关联(新增和修改)
 //@protocol RevSaveTwoAuthClassmateInfo
 //@end

@@ -10,8 +10,9 @@
 #define MyClones_Common_h
 
 //#define HTTP_Url    @"http://127.0.0.1"
-#define HTTP_Url    @"http://192.168.0.115"
-#define HTTP_Port    @"3000"
+#define HTTP_Url            @"http://192.168.0.115"
+#define HTTP_Pic_Avatar     @"http://192.168.0.115/Avatar/"
+#define HTTP_Port           @"3000"
 
 #define Cach_Key_CookieProperties       @"Cach_Key_CookieProperties"
 

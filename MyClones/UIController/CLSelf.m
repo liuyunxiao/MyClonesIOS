@@ -93,13 +93,14 @@
 {
     taskChangeHeadPic = nil;
     [[MIndicatorView sharedInstance] hide];
-    RevBase *rev = aResult.resultValue;
+    RevChangeHeadPic *rev = aResult.resultValue;
     if(!rev)
         return;
     
     if(rev.resultCode == EHRC_Success)
     {
-        
+        NSString* str = [NSString stringWithFormat:@"%@%@", HTTP_Pic_Avatar, rev.headPic];
+        [imgTest setImageWithURL:[NSURL URLWithString:str]];
     }
     else
     {

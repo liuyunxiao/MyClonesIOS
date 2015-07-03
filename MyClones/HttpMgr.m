@@ -120,7 +120,7 @@
     
     [self RegisterRequestData:@"SendQueryDynamicByType" reqURL:@"dynamic/queryDynamicByType" resClass:@"RevBase"];
     
-    [self RegisterRequestData:@"SendChangeHeadPic" reqURL:@"self/changeHeadPic" resClass:@"RevBase"];
+    [self RegisterRequestData:@"SendChangeHeadPic" reqURL:@"self/changeHeadPic" resClass:@"RevChangeHeadPic"];
 }
 
 -(void)RegisterRequestData:(NSString*)name reqURL:(NSString*)reqURL resClass:(NSString*)resClass

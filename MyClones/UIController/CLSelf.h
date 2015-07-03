@@ -10,7 +10,7 @@
 
 @interface CLSelf : UIViewController<UIImagePickerControllerDelegate, UIActionSheetDelegate>//UITableViewController<UITableViewDelegate, UITableViewDataSource>
 {
-    
+    IBOutlet UIImageView        *imgTest;
 }
 
 @end
