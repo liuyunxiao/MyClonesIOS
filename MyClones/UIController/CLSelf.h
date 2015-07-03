@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLSelf : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@interface CLSelf : UIViewController<UIImagePickerControllerDelegate, UIActionSheetDelegate>//UITableViewController<UITableViewDelegate, UITableViewDataSource>
+{
+    
+}
 
 @end

@@ -117,7 +117,10 @@
     [self RegisterRequestData:@"SendRegister" reqURL:@"account/register" resClass:@"RevBase"];
     [self RegisterRequestData:@"SendPhoneCode" reqURL:@"account/phonecode" resClass:@"RevBase"];
     [self RegisterRequestData:@"SendCheckAccount" reqURL:@"account/checkAccount" resClass:@"RevBase"];
+    
     [self RegisterRequestData:@"SendQueryDynamicByType" reqURL:@"dynamic/queryDynamicByType" resClass:@"RevBase"];
+    
+    [self RegisterRequestData:@"SendChangeHeadPic" reqURL:@"self/changeHeadPic" resClass:@"RevBase"];
 }
 
 -(void)RegisterRequestData:(NSString*)name reqURL:(NSString*)reqURL resClass:(NSString*)resClass
@@ -130,9 +133,8 @@
     [dicCmdData_ setObject:data forKey:name];
 }
 
-- (Task *)send:(NSString*)name data:(NSDictionary*)dicData observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block
+- (Task *)send:(NSString*)name data:(NSDictionary*)dicData files:(NSArray*)arryFiles observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block;
 {
-    //NSParameterAssert(dicData!=nil);
     HttpCmdData *data = [dicCmdData_ objectForKey:name];
     if(!data)
     {
@@ -151,7 +153,7 @@
     //todo?
     if(![name isEqualToString:@"SendLogin"])
         [request setRequestCookies:[NSMutableArray arrayWithArray:[self cookies]]];
-
+    
     if(dicData)
     {
         for(NSString* key in dicData)
@@ -159,9 +161,16 @@
             [request setPostValue:[dicData objectForKey:key]  forKey:key];
         }
     }
+    
+    if(arryFiles)
+    {
+        for(NSDictionary* dic in arryFiles)
+        {
+            [request addData:[dic objectForKey:@"data"] withFileName:[dic objectForKey:@"name"] andContentType:[dic objectForKey:@"type"] forKey:[dic objectForKey:@"key"]];
+        }
+    }
+    
 
-    //[request setPostValue:@"test"  forKey:@"account"];
-    //[request setPostValue:@"1231321"  forKey:@"password"];
     [task setRequest:request];
     [request release];
     if(block)
@@ -171,6 +180,11 @@
     [task start];
     
     return [task autorelease];
+}
+
+- (Task *)send:(NSString*)name data:(NSDictionary*)dicData observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block
+{
+    return [self send:name data:dicData files:nil observer:aObserver selector:aSelector block:block];
 }
 
 @end

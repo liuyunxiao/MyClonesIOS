@@ -11,11 +11,14 @@
 
 @interface UserMgr : NSSingleton
 {
-    NSString        *name;
-    NSString        *account;
-    EAccountType    accountType;
-    NSString        *password;
+    NSString        *devToken_;
+    NSString        *name_;
+    NSString        *account_;
+    EAccountType    accountType_;
+    NSString        *password_;
 }
+@property(nonatomic, strong) NSString       *devToken;
+@property(nonatomic, assign) BOOL           sendDevToken;
 
 -(BOOL)isLogin;
 @end

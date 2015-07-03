@@ -52,7 +52,7 @@
     
     if(rev.resultCode == EHRC_Success)
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:Event_Login object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:Notification_Login object:nil];
         
         [self dismissViewControllerAnimated:YES completion:^{
             

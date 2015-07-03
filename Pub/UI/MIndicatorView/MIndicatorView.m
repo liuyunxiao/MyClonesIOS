@@ -366,7 +366,6 @@ MIndicatorView *gIndicatorView=nil;
 		return;
 	}
     
-    NSLog(@"jfldsjfl");
     [UIView animateWithDuration:0.5f animations:^{
         [customView_ setAlpha:0.f];
     } completion:^(BOOL finished) {

@@ -9,13 +9,14 @@
 #ifndef MyClones_Common_h
 #define MyClones_Common_h
 
-#define HTTP_Url    @"http://127.0.0.1"
-///#define HTTP_Url    @"http://192.168.0.112"
+//#define HTTP_Url    @"http://127.0.0.1"
+#define HTTP_Url    @"http://192.168.0.115"
 #define HTTP_Port    @"3000"
 
-#define Cach_Key_CookieProperties  @"Cach_Key_CookieProperties"
+#define Cach_Key_CookieProperties       @"Cach_Key_CookieProperties"
 
-#define Event_Login     @"Event_Login"
+#define Notification_Login              @"Notification_Login"
+#define Notification_DeviceToken        @"Notification_DeviceToken"
 
 typedef enum {
     EAT_Phone,

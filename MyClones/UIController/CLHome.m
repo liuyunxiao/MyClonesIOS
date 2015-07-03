@@ -10,10 +10,13 @@
 #import "ContentViewController.h"
 #import "HttpMgr.h"
 #import "DataModel.h"
+#import "UserMgr.h"
 
 @interface CLHome ()
 {
     Task        *taskQueryDynamicByType;
+    Task        *taskRegisterDevToken;
+    BOOL        bSendDevToken;
 }
 
 @end
@@ -44,36 +47,35 @@
 -(void)viewDidLoad
 {
     bLogin = NO;
+    bSendDevToken = NO;
     //[self.view setHidden:YES];
     [super viewDidLoad];
     
     self.delegate = self;
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:Event_Login object:nil queue:nil usingBlock:^(NSNotification *note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:Notification_Login object:nil queue:nil usingBlock:^(NSNotification *note) {
         if(!taskQueryDynamicByType)
         {
             taskQueryDynamicByType = [[HttpMgr sharedInstance] send:@"SendQueryDynamicByType" data:nil observer:self selector:@selector(onRevQueryDynamicByType:context:) block:YES];
         }
     }];
     
-    return;
-    viewPages = [[NSMutableArray alloc] init];
-    
-    UIView* viewDynamic = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuDynamic" owner:nil options:nil] lastObject];
-    [viewPages addObject:viewDynamic];
-    [self.view addSubview:viewDynamic];
-    
-    UIView* viewPhantasm = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuPhantasm" owner:nil options:nil] lastObject];
-    [viewPages addObject:viewPhantasm];
-    [self.view addSubview:viewPhantasm];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onDeviceTokenNotification:) name:Notification_DeviceToken object:nil];
+}
 
-    UIView* viewHello = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuHello" owner:nil options:nil] lastObject];
-    [viewPages addObject:viewHello];
-    [self.view addSubview:viewHello];
+-(void)regDeviceToken
+{
+    NSString* tokenStr=[NSString stringWithFormat:@"%@",[[UserMgr sharedInstance] devToken]];
+    
+    if([[RunInfo sharedInstance] isLogined]&&tokenStr!=nil&&![tokenStr isEqualToString:@"(null)"])
+    {
+        taskRegisterDevToken=[[[DataEngine sharedInstance] registerDev:[[[RunInfo sharedInstance] uId] longLongValue] token:tokenStr observer:self selector:@selector(onRegisterDevResult:context:) context:nil] retain];
+    }
+}
 
-    UIView* viewSelf = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"VBottomMenuSelf" owner:nil options:nil] lastObject];
-    [viewPages addObject:viewSelf];
-    [self.view addSubview:viewSelf];
+-(void)onDeviceTokenNotification:(NSNotification*)aNotification
+{
+    [self regDeviceToken];
 }
 
 -(void)onRevQueryDynamicByType:(FBTaskResult *)aResult context:(id)aContext

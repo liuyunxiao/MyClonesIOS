@@ -11,6 +11,7 @@
 #import "Json.h"
 #import "HttpMgr.h"
 #import "Common.h"
+#import "UserMgr.h"
 
 BMKMapManager* _mapManager;
 
@@ -23,8 +24,8 @@ BMKMapManager* _mapManager;
     NSString *str = [NSString stringWithFormat:@"Device Token=%@",tokenAsString];
     
     NSLog(@"%@", str);
-    [[RunInfo sharedInstance] setDeviceToken:[tokenAsString copy]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDeviceToken object:nil];
+    [[UserMgr sharedInstance] setDevToken:[tokenAsString copy]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_DeviceToken object:nil];
 }
 
 - (void)application:(UIApplication*)appdidFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
@@ -68,7 +69,7 @@ BMKMapManager* _mapManager;
     
 	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
 															 bundle: nil];
-    
+    NSString* str = [[UserMgr sharedInstance] devToken];
     
 //    if(![[DataEngine sharedInstance] guidePage])
 //    {

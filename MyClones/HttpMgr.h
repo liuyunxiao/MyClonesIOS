@@ -27,4 +27,6 @@
 
 //发送请求（JModel解析)
 - (Task *)send:(NSString*)name data:(NSDictionary*)dicData observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block;
+
+- (Task *)send:(NSString*)name data:(NSDictionary*)dicData files:(NSArray*)arryFiles observer:(id)aObserver selector:(SEL)aSelector block:(BOOL)block;
 @end

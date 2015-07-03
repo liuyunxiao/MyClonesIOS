@@ -9,5 +9,10 @@
 #import "UserMgr.h"
 
 @implementation UserMgr
+@synthesize devToken = devToken_;
 
+-(id)init
+{
+    return [super init];
+}
 @end
