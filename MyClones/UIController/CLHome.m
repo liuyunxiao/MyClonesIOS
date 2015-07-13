@@ -27,7 +27,7 @@
 {
     [super viewDidAppear:animated];
     
-    if(!bLogin)
+    if(![[UserMgr sharedInstance] login])
     {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
                                                                  bundle: nil];
@@ -37,16 +37,13 @@
         [self presentViewController:vc animated:NO completion:^(void){
             
         }];
-        bLogin = YES;
     }
-    
 }
 
 
 
 -(void)viewDidLoad
 {
-    bLogin = NO;
     bSendDevToken = NO;
     //[self.view setHidden:YES];
     [super viewDidLoad];

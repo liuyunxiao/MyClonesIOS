@@ -1,18 +1,16 @@
 //
-//  CLSelf.h
+//  VCellSelfHead.h
 //  MyClones
 //
-//  Created by lyx on 15/6/26.
+//  Created by lyx on 15/7/3.
 //  Copyright (c) 2015年 Zhenwei. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface CLSelf : UIViewController
+@interface VCellSelfHead : UITableViewCell
 {
     IBOutlet UIImageView        *imgHead;
     IBOutlet UILabel            *labName;
 }
-
--(IBAction)onClickInfo:(id)sender;
 @end

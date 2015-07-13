@@ -12,6 +12,7 @@
 #import "SlideNavigationController+Utils.h"
 #import "CLHome.h"
 #import "ContentViewController.h"
+#import "UserMgr.h"
 
 @interface CLLogin ()
 {
@@ -52,8 +53,8 @@
     
     if(rev.resultCode == EHRC_Success)
     {
+        [[UserMgr sharedInstance] onLogin:rev];
         [[NSNotificationCenter defaultCenter] postNotificationName:Notification_Login object:nil];
-        
         [self dismissViewControllerAnimated:YES completion:^{
             
         }];

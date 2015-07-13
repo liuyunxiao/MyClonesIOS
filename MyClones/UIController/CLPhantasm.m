@@ -43,12 +43,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [self.tabBarController.tabBar setHidden:NO];
-    [super viewWillAppear:animated];
-}
-
 #pragma mark - UITableView Delegate & Datasrouce -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -93,8 +87,8 @@
         vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"CLPengpeng"];
     }
     
-    [self.parentViewController.navigationController pushViewController:vc animated:YES];
-    [self.parentViewController.navigationController.navigationBar setHidden:NO];
+    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController.navigationBar setHidden:NO];
     
     //[self.tabBarController.tabBar setHidden:YES];
 }

@@ -36,28 +36,28 @@ BMKMapManager* _mapManager;
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSMutableDictionary *dic=[[NSMutableDictionary alloc] initWithDictionary:userInfo];
     UIApplicationState appState=[UIApplication sharedApplication].applicationState;
-    if(!(appState==UIApplicationStateActive))
-    {
-        [dic setObject:[NSNumber numberWithBool:YES] forKey:@"NType"];
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    }
-    else{
-        [dic setObject:[NSNumber numberWithBool:NO] forKey:@"NType"];
-    }
-    
-    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"smsreceived" withExtension:@"caf"];
-    if (fileURL != nil)
-    {
-        SystemSoundID theSoundID;
-        OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &theSoundID);
-        if (error == kAudioServicesNoError){
-            AudioServicesPlaySystemSound(theSoundID);
-        }else {
-            NSLog(@"Failed to create sound ");
-        }
-    }
+//    if(!(appState==UIApplicationStateActive))
+//    {
+//        [dic setObject:[NSNumber numberWithBool:YES] forKey:@"NType"];
+//        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
+//        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+//        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+//    }
+//    else{
+//        [dic setObject:[NSNumber numberWithBool:NO] forKey:@"NType"];
+//    }
+//    
+//    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"smsreceived" withExtension:@"caf"];
+//    if (fileURL != nil)
+//    {
+//        SystemSoundID theSoundID;
+//        OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &theSoundID);
+//        if (error == kAudioServicesNoError){
+//            AudioServicesPlaySystemSound(theSoundID);
+//        }else {
+//            NSLog(@"Failed to create sound ");
+//        }
+//    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kPushMessageNotification object:dic];
 }

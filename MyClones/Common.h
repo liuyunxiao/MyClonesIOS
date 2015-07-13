@@ -10,8 +10,11 @@
 #define MyClones_Common_h
 
 //#define HTTP_Url    @"http://127.0.0.1"
-#define HTTP_Url            @"http://192.168.0.115"
-#define HTTP_Pic_Avatar     @"http://192.168.0.115/Avatar/"
+//#define HTTP_Url            @"http://192.168.0.115"
+#define HTTP_Url            @"http://192.168.1.108"
+//#define HTTP_Pic_Avatar     @"http://127.0.0.1/Avatar/"
+//#define HTTP_Pic_Avatar     @"http://192.168.0.115/Avatar/"
+#define HTTP_Pic_Avatar     @"http://192.168.1.108/Avatar/"
 #define HTTP_Port           @"3000"
 
 #define Cach_Key_CookieProperties       @"Cach_Key_CookieProperties"
@@ -39,5 +42,11 @@ typedef enum {
 typedef enum {
     EPT_EShoppingReviewer,     //网购
 } EPhantasmType;
+
+typedef enum {
+    EST_Null,
+    EST_Male,
+    EST_Female,
+} ESexType;
 
 #endif
