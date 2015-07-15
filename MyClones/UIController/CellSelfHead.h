@@ -14,4 +14,5 @@
 }
 @property(nonatomic, retain)IBOutlet UIImageView    *imgHead;
 @property(nonatomic, retain)IBOutlet UILabel        *labName;
+@property(nonatomic, retain)IBOutlet UILabel        *labNickname;
 @end

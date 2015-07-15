@@ -136,6 +136,16 @@
 		54D45F791B4528D0008F39F7 /* first_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D45F761B4528D0008F39F7 /* first_selected@2x.png */; };
 		54D45F7A1B4528D0008F39F7 /* second_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D45F771B4528D0008F39F7 /* second_selected@2x.png */; };
 		54D45F7B1B4528D0008F39F7 /* third_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D45F781B4528D0008F39F7 /* third_selected@2x.png */; };
+		54D6FCAD1B55F7BD005B2CAE /* CellSelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCAB1B55F7BD005B2CAE /* CellSelf.m */; };
+		54D6FCAE1B55F7BD005B2CAE /* CellSelf.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D6FCAC1B55F7BD005B2CAE /* CellSelf.xib */; };
+		54D6FCB41B5628E0005B2CAE /* CropImagePopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCB21B5628E0005B2CAE /* CropImagePopoverView.m */; };
+		54D6FCB51B5628E0005B2CAE /* CropImagePopoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D6FCB31B5628E0005B2CAE /* CropImagePopoverView.xib */; };
+		54D6FCB81B5629F9005B2CAE /* ImageCropperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCB71B5629F9005B2CAE /* ImageCropperView.m */; };
+		54D6FCC11B562A45005B2CAE /* UIDevice+Resolutions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCBA1B562A45005B2CAE /* UIDevice+Resolutions.m */; };
+		54D6FCC21B562A45005B2CAE /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCBC1B562A45005B2CAE /* UIImage+fixOrientation.m */; };
+		54D6FCC31B562A45005B2CAE /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCBE1B562A45005B2CAE /* UIImage+Rotate_Flip.m */; };
+		54D6FCC41B562A45005B2CAE /* UIImage+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCC01B562A45005B2CAE /* UIImage+Rotation.m */; };
+		54D6FCC71B562F1D005B2CAE /* CLQcCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCC61B562F1D005B2CAE /* CLQcCode.m */; };
 		54DB833C1B4687510068092A /* CLSelfInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DB833B1B4687510068092A /* CLSelfInfo.m */; };
 		54DBBC751B4D12F7006999BE /* CellNormalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DBBC731B4D12F7006999BE /* CellNormalItem.m */; };
 		54DBBC761B4D12F7006999BE /* CellNormalItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DBBC741B4D12F7006999BE /* CellNormalItem.xib */; };
@@ -511,6 +521,24 @@
 		54D45F761B4528D0008F39F7 /* first_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first_selected@2x.png"; sourceTree = "<group>"; };
 		54D45F771B4528D0008F39F7 /* second_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second_selected@2x.png"; sourceTree = "<group>"; };
 		54D45F781B4528D0008F39F7 /* third_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "third_selected@2x.png"; sourceTree = "<group>"; };
+		54D6FCAA1B55F7BD005B2CAE /* CellSelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellSelf.h; sourceTree = "<group>"; };
+		54D6FCAB1B55F7BD005B2CAE /* CellSelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellSelf.m; sourceTree = "<group>"; };
+		54D6FCAC1B55F7BD005B2CAE /* CellSelf.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellSelf.xib; sourceTree = "<group>"; };
+		54D6FCB11B5628E0005B2CAE /* CropImagePopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropImagePopoverView.h; sourceTree = "<group>"; };
+		54D6FCB21B5628E0005B2CAE /* CropImagePopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropImagePopoverView.m; sourceTree = "<group>"; };
+		54D6FCB31B5628E0005B2CAE /* CropImagePopoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropImagePopoverView.xib; sourceTree = "<group>"; };
+		54D6FCB61B5629F9005B2CAE /* ImageCropperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropperView.h; sourceTree = "<group>"; };
+		54D6FCB71B5629F9005B2CAE /* ImageCropperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropperView.m; sourceTree = "<group>"; };
+		54D6FCB91B562A45005B2CAE /* UIDevice+Resolutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Resolutions.h"; sourceTree = "<group>"; };
+		54D6FCBA1B562A45005B2CAE /* UIDevice+Resolutions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Resolutions.m"; sourceTree = "<group>"; };
+		54D6FCBB1B562A45005B2CAE /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		54D6FCBC1B562A45005B2CAE /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		54D6FCBD1B562A45005B2CAE /* UIImage+Rotate_Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate_Flip.h"; sourceTree = "<group>"; };
+		54D6FCBE1B562A45005B2CAE /* UIImage+Rotate_Flip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate_Flip.m"; sourceTree = "<group>"; };
+		54D6FCBF1B562A45005B2CAE /* UIImage+Rotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotation.h"; sourceTree = "<group>"; };
+		54D6FCC01B562A45005B2CAE /* UIImage+Rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotation.m"; sourceTree = "<group>"; };
+		54D6FCC51B562F1D005B2CAE /* CLQcCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLQcCode.h; sourceTree = "<group>"; };
+		54D6FCC61B562F1D005B2CAE /* CLQcCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLQcCode.m; sourceTree = "<group>"; };
 		54DB833A1B4687510068092A /* CLSelfInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSelfInfo.h; sourceTree = "<group>"; };
 		54DB833B1B4687510068092A /* CLSelfInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSelfInfo.m; sourceTree = "<group>"; };
 		54DBBC721B4D12F7006999BE /* CellNormalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellNormalItem.h; sourceTree = "<group>"; };
@@ -1300,6 +1328,19 @@
 		54CF538A1B3D561700C7C2BA /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				54D6FCB91B562A45005B2CAE /* UIDevice+Resolutions.h */,
+				54D6FCBA1B562A45005B2CAE /* UIDevice+Resolutions.m */,
+				54D6FCBB1B562A45005B2CAE /* UIImage+fixOrientation.h */,
+				54D6FCBC1B562A45005B2CAE /* UIImage+fixOrientation.m */,
+				54D6FCBD1B562A45005B2CAE /* UIImage+Rotate_Flip.h */,
+				54D6FCBE1B562A45005B2CAE /* UIImage+Rotate_Flip.m */,
+				54D6FCBF1B562A45005B2CAE /* UIImage+Rotation.h */,
+				54D6FCC01B562A45005B2CAE /* UIImage+Rotation.m */,
+				54D6FCB61B5629F9005B2CAE /* ImageCropperView.h */,
+				54D6FCB71B5629F9005B2CAE /* ImageCropperView.m */,
+				54D6FCB11B5628E0005B2CAE /* CropImagePopoverView.h */,
+				54D6FCB21B5628E0005B2CAE /* CropImagePopoverView.m */,
+				54D6FCB31B5628E0005B2CAE /* CropImagePopoverView.xib */,
 				54CBCB451B3C180700C33525 /* ContentViewController.h */,
 				54CBCB461B3C180700C33525 /* ContentViewController.m */,
 				54D1E6C51B3453E100C7D044 /* SlideNavigationController+Utils.h */,
@@ -1352,22 +1393,35 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		54DB83501B468AD00068092A /* Self */ = {
+		54D6FCB01B55FAE9005B2CAE /* AccountInfo */ = {
 			isa = PBXGroup;
 			children = (
-				54CF53671B3D21D400C7C2BA /* CLSelf.h */,
-				54CF53681B3D21D400C7C2BA /* CLSelf.m */,
 				54DB833A1B4687510068092A /* CLSelfInfo.h */,
 				54DB833B1B4687510068092A /* CLSelfInfo.m */,
-				54DBBC781B4D14E2006999BE /* CellSelfHead.h */,
-				54DBBC791B4D14E2006999BE /* CellSelfHead.m */,
-				54DBBC7A1B4D14E2006999BE /* CellSelfHead.xib */,
 				54DBBC7D1B4D15EB006999BE /* CellSelfHeadInfo.h */,
 				54DBBC7E1B4D15EB006999BE /* CellSelfHeadInfo.m */,
 				54DBBC7F1B4D15EB006999BE /* CellSelfHeadInfo.xib */,
 				54DBBC821B4D4B2F006999BE /* CellSelfInfo.h */,
 				54DBBC831B4D4B2F006999BE /* CellSelfInfo.m */,
 				54DBBC841B4D4B2F006999BE /* CellSelfInfo.xib */,
+				54D6FCC51B562F1D005B2CAE /* CLQcCode.h */,
+				54D6FCC61B562F1D005B2CAE /* CLQcCode.m */,
+			);
+			name = AccountInfo;
+			sourceTree = "<group>";
+		};
+		54DB83501B468AD00068092A /* Self */ = {
+			isa = PBXGroup;
+			children = (
+				54D6FCB01B55FAE9005B2CAE /* AccountInfo */,
+				54CF53671B3D21D400C7C2BA /* CLSelf.h */,
+				54CF53681B3D21D400C7C2BA /* CLSelf.m */,
+				54DBBC781B4D14E2006999BE /* CellSelfHead.h */,
+				54DBBC791B4D14E2006999BE /* CellSelfHead.m */,
+				54DBBC7A1B4D14E2006999BE /* CellSelfHead.xib */,
+				54D6FCAA1B55F7BD005B2CAE /* CellSelf.h */,
+				54D6FCAB1B55F7BD005B2CAE /* CellSelf.m */,
+				54D6FCAC1B55F7BD005B2CAE /* CellSelf.xib */,
 			);
 			name = Self;
 			sourceTree = "<group>";
@@ -1952,12 +2006,14 @@
 				541FBF401B33D7DE0028190A /* InfoPlist.strings in Resources */,
 				1AD0E2531791519F00E3EC34 /* Icon@2x.png in Resources */,
 				1AD7F24017BB3E0F00E169F7 /* smsreceived.caf in Resources */,
+				54D6FCAE1B55F7BD005B2CAE /* CellSelf.xib in Resources */,
 				1AC5970B1A5D2E110048C7F4 /* iTunesArtwork@2x.png in Resources */,
 				1AF95B5817D4715600A6D1F6 /* Default-568h@2x.png in Resources */,
 				541FBF441B33D7DE0028190A /* ProvincesAndCities.plist in Resources */,
 				1AF95B5917D4715600A6D1F6 /* Default.png in Resources */,
 				1A1B61BA1A761A180089D6DB /* UMSCommentInputControlleriPad.xib in Resources */,
 				1AF95B5A17D4715600A6D1F6 /* Default@2x.png in Resources */,
+				54D6FCB51B5628E0005B2CAE /* CropImagePopoverView.xib in Resources */,
 				54D45F791B4528D0008F39F7 /* first_selected@2x.png in Resources */,
 				54D45F7A1B4528D0008F39F7 /* second_selected@2x.png in Resources */,
 				1AE121E61A2DAB9500FCB26F /* LTBounceSheet.xib in Resources */,
@@ -2008,15 +2064,19 @@
 			files = (
 				1A85FC25177A8FCA008A5364 /* HZActivityIndicatorView.m in Sources */,
 				54D23A851B43D45200D21253 /* RDVTabBarController.m in Sources */,
+				54D6FCB41B5628E0005B2CAE /* CropImagePopoverView.m in Sources */,
+				54D6FCAD1B55F7BD005B2CAE /* CellSelf.m in Sources */,
 				541FBF471B33D7DE0028190A /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				8AEF752A1761E9DE00819D78 /* ASIAuthenticationDialog.m in Sources */,
 				541FBF3D1B33D7DE0028190A /* HttpRequestTask.m in Sources */,
 				8AEF752B1761E9DE00819D78 /* ASIDataCompressor.m in Sources */,
 				1A853C751A6F479100D8B321 /* NSDate+convenience.m in Sources */,
 				1A0C02121A8B4973003E0242 /* rscode.c in Sources */,
+				54D6FCB81B5629F9005B2CAE /* ImageCropperView.m in Sources */,
 				8AEF752C1761E9DE00819D78 /* ASIDataDecompressor.m in Sources */,
 				54DBBC751B4D12F7006999BE /* CellNormalItem.m in Sources */,
 				8AEF752D1761E9DE00819D78 /* ASIDownloadCache.m in Sources */,
+				54D6FCC41B562A45005B2CAE /* UIImage+Rotation.m in Sources */,
 				8AEF752E1761E9DE00819D78 /* ASIFormDataRequest.m in Sources */,
 				8AEF752F1761E9DE00819D78 /* ASIHTTPRequest.m in Sources */,
 				1A853C781A6F479100D8B321 /* UIView+convenience.m in Sources */,
@@ -2034,6 +2094,7 @@
 				54CBCB401B3C0E4000C33525 /* AKTabBarController.m in Sources */,
 				8AEF75361761E9DE00819D78 /* NSSingleton.m in Sources */,
 				1A853C771A6F479100D8B321 /* UIColor+expanded.m in Sources */,
+				54D6FCC11B562A45005B2CAE /* UIDevice+Resolutions.m in Sources */,
 				8AEF75371761E9DE00819D78 /* NSAttributedString+Attributes.m in Sources */,
 				54CF537D1B3D51A600C7C2BA /* CLEShopping.m in Sources */,
 				8AEF75381761E9DE00819D78 /* OHAttributedLabel.m in Sources */,
@@ -2058,6 +2119,7 @@
 				1A0C020D1A8B4973003E0242 /* mask.c in Sources */,
 				1A748C0A1AE61D02002926DC /* UIScrollView+JYVisibleCenterScroll.m in Sources */,
 				8AEF75401761E9DE00819D78 /* SBJsonStreamParserAdapter.m in Sources */,
+				54D6FCC71B562F1D005B2CAE /* CLQcCode.m in Sources */,
 				541FBF321B33D7DE0028190A /* DataEngine.m in Sources */,
 				54DB833C1B4687510068092A /* CLSelfInfo.m in Sources */,
 				541FBF631B340B180028190A /* CLLogin.m in Sources */,
@@ -2073,6 +2135,7 @@
 				541FBF311B33D7DE0028190A /* DataDefine.m in Sources */,
 				1A0C020E1A8B4973003E0242 /* QRCodeGenerator.m in Sources */,
 				8AEF754A1761E9DE00819D78 /* SDWebImageDecoder.m in Sources */,
+				54D6FCC21B562A45005B2CAE /* UIImage+fixOrientation.m in Sources */,
 				541FBF491B33D7DE0028190A /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				8AEF754B1761E9DE00819D78 /* SDWebImageDownloader.m in Sources */,
 				54CF53891B3D55F700C7C2BA /* CLESComments.m in Sources */,
@@ -2110,6 +2173,7 @@
 				8AEF755A1761E9DE00819D78 /* ZipArchive.mm in Sources */,
 				8AEF755B1761E9DE00819D78 /* ResponseParser.m in Sources */,
 				541FBF461B33D7DE0028190A /* SlideNavigationContorllerAnimatorScale.m in Sources */,
+				54D6FCC31B562A45005B2CAE /* UIImage+Rotate_Flip.m in Sources */,
 				8AEF755C1761E9DE00819D78 /* Task.m in Sources */,
 				8AEF755D1761E9DE00819D78 /* BWHorizontalTableView.m in Sources */,
 				54CF53801B3D546F00C7C2BA /* CLESArround.m in Sources */,

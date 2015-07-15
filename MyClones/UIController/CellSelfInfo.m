@@ -20,4 +20,12 @@
     // Configure the view for the selected state
 }
 
+-(void)dealloc
+{
+    [_labDes release];
+    [_labNext release];
+    [_labTitle release];
+    [super dealloc];
+}
+
 @end

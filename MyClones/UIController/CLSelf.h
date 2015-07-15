@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLSelf : UIViewController
+@interface CLSelf : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
-    IBOutlet UIImageView        *imgHead;
-    IBOutlet UILabel            *labName;
+    IBOutlet UITableView        *viewTalbe;
 }
 
--(IBAction)onClickInfo:(id)sender;
 @end

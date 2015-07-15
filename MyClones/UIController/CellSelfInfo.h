@@ -10,6 +10,7 @@
 
 @interface CellSelfInfo : UITableViewCell
 
-@property(nonatomic, retain) IBOutlet UILabel       *labInfo;
-@property(nonatomic, retain) IBOutlet UIImageView   *imgIcon;
+@property(nonatomic, retain) IBOutlet UILabel       *labDes;
+@property(nonatomic, retain) IBOutlet UILabel       *labTitle;
+@property(nonatomic, retain) IBOutlet UILabel       *labNext;
 @end

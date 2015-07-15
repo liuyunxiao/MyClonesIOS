@@ -9,130 +9,74 @@
 #import "CLSelfInfo.h"
 #import "HttpMgr.h"
 #import "DataModel.h"
+#import "CellSelfInfo.h"
+#import "CellSelfHeadInfo.h"
+#import "UserMgr.h"
+#import "CropImagePopoverView.h"
 
 typedef enum {
-    ESIT_Sec_Start_0    = 0,
     ESIT_Head           = 0,
     ESIT_Name           = 1,
     ESIT_Nickname       = 2,
-    ESIT_Account        = 3,
-    ESIT_Phone          = 4,
-    ESIT_Sec_End_0      = 5,
+    ESIT_QcCode         = 3,
+    ESIT_Account        = 4,
+    ESIT_Phone          = 5,
+    ESIT_Sec_0_All         ,
+    ESIT_Sec_0          = 0,
     
-    ESIT_Sec_Start_1    = ESIT_Sec_End_0,
-    ESIT_Sex            = ESIT_Sec_End_0,
-    ESIT_Distinct       = 6,
-    ESIT_Signature      = 7,
-    ESIT_Sec_End_1      = 8,
     
-    ESIT_All            = ESIT_Sec_End_1,
+    ESIT_Sex            = 0,
+    ESIT_Distinct       = 1,
+    ESIT_Signature      = 2,
+    ESIT_Sec_1_All         ,
+    ESIT_Sec_1          = 1,
+    
+    ESIT_Sec_All        = 2,
 } ESelfInfoType;
-
-#define SelfInfoSectionNum    2
-
-#define kHeader @"header" // 头部标题对应的key
-#define kFooter @"footer" // 尾部标题对应的key
-#define kCities @"cities" // 城市数组对应的key
-
-#define kRows       @"rows"
-#define kName       @"name"
-#define kTitle      @"title"
-#define kDes        @"des"
-#define kPic        @"pic"
-
-
 
 @interface CLSelfInfo ()
 {
     Task        *taskChangeHeadPic;
-     NSArray    *_allCells; // 所有的省份
+    CropImagePopoverView *cropImageView_;
+    
 }
 @end
 
 @implementation CLSelfInfo
 
-
--(void)viewDidAppear:(BOOL)animated
-{
-    //UIActionSheet *sheet = nil;
-    
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-//        sheet = [[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"手机相册", nil] autorelease];
-//    }
-//    else {
-//        sheet = [[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"手机相册", nil] autorelease];
-//    }
-//    
-//    [sheet showInView:self.view];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //NSSelectorFromString("on")
-    // 2.初始化数据
-    _allCells = @[
-                      @[
-                          @{
-                              kName     : @"head",
-                              kTitle    : @"头像",
-                              kPic      : @"default.png",
-                              },
-                          @{
-                              kName     : @"name",
-                              kTitle    : @"姓名",
-                              kDes      : @"未设置"
-                              },
-                          @{
-                              kName     : @"nickname",
-                              kTitle    : @"昵称",
-                              kDes      : @"未设置",
-                              },
-                          @{
-                              kName     : @"account",
-                              kTitle    : @"账号",
-                              kDes      : @"未设置",
-                              },
-                          @{
-                              kName     : @"phone",
-                              kTitle    : @"手机",
-                              kDes      : @"未设置",
-                              },
-                          ],
-                      @[
-                          @{
-                              kName     : @"sex",
-                              kTitle    : @"性别",
-                              kPic      : @"未设置",
-                              },
-                          @{
-                              kName     : @"distinct",
-                              kTitle    : @"地区",
-                              kDes      : @"未设置"
-                              },
-                          @{
-                              kName     : @"signature",
-                              kTitle    : @"签名",
-                              kDes      : @"未设置",
-                              },
-                          ],
-                      ];
-    [_allCells retain];
-}
-
--(void)onSelHead
-{
     
 }
-
 -(void)onUpdatePicHead:(UIImageView*)img
 {
     
 }
 
+-(void)onRevChangeHeadPic:(FBTaskResult *)aResult context:(id)aContext
+{
+    //CANCEL_AND_RELEASE_TASK(taskChangeHeadPic);
+    [[MIndicatorView sharedInstance] hide];
+    RevChangeHeadPic *rev = aResult.resultValue;
+    if(!rev)
+        return;
+    
+    if(rev.resultCode != EHRC_Success)
+    {
+        [[MIndicatorView sharedInstance] showWithTitle:rev.resultMsg animated:NO];
+        return;
+    }
+    
+    [[[UserMgr sharedInstance] userData] setHeadPic:rev.headPic];
+    [viewTable reloadData];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_HeadPicChange object:nil];
+}
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == actionSheet.cancelButtonIndex)
     {
-        return ;	// Cancel button pressed
+        return;
     }
     
     UIImagePickerController *picker = [[[UIImagePickerController alloc] init] autorelease];
@@ -158,9 +102,41 @@ typedef enum {
     UIImage *orginalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     [picker dismissModalViewControllerAnimated:YES];
+    
+    cropImageView_ = [[[NSBundle mainBundle] loadNibNamed:@"CropImagePopoverView" owner:nil options:nil] lastObject];
+    if(orginalImage.imageOrientation==UIImageOrientationRight)
+    {
+        //orginalImage=[orginalImage rotate90CounterClockwise];
+    }
     //orginalImage=[orginalImage fixOrientation];
-    NSData *dataObj = UIImageJPEGRepresentation(orginalImage, 0.25f);
+    NSData *dataObj = UIImageJPEGRepresentation(orginalImage, 0.5f);
     NSLog(@"--------%.2fM", [dataObj length]/1024.f/1024.f);
+    UIImage *image = [UIImage imageWithData:dataObj];
+    [cropImageView_ setImage:image];
+    [cropImageView_ setCropViewRect:200.f height:200.f];
+    [cropImageView_ setCropImage];
+    [cropImageView_ setDelegate:self];
+    [[[UIApplication sharedApplication] keyWindow] addSubview:cropImageView_];
+    
+}
+
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissModalViewControllerAnimated:YES];
+}
+
+- (void)cropImageFinished:(NSData *)aData
+{
+    if(cropImageView_!=nil)
+    {
+        [cropImageView_ dismissWithAnimated:YES];
+        cropImageView_ = nil;
+    }
+    
+    //fileData=[aData retain];
+    
     if(!taskChangeHeadPic)
     {
         NSMutableArray *arry = [[NSMutableArray alloc] init];
@@ -171,7 +147,7 @@ typedef enum {
             NSString *fileName = [NSString stringWithFormat:@"%llu.jpg",interval*1000];
             [dicObj setObject:fileName forKey:@"name"];
             [dicObj setObject:@"file" forKey:@"key"];
-            [dicObj setObject:dataObj forKey:@"data"];
+            [dicObj setObject:aData forKey:@"data"];
             [arry addObject:dicObj];
             
         }
@@ -180,95 +156,256 @@ typedef enum {
     }
 }
 
--(void)onRevChangeHeadPic:(FBTaskResult *)aResult context:(id)aContext
+#pragma mark - UITableView Delegate & Datasrouce -
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    taskChangeHeadPic = nil;
-    [[MIndicatorView sharedInstance] hide];
-    RevChangeHeadPic *rev = aResult.resultValue;
-    if(!rev)
-        return;
-    
-    if(rev.resultCode == EHRC_Success)
+    if(ESIT_Sec_0 == section)
     {
-        NSString* str = [NSString stringWithFormat:@"%@%@", HTTP_Pic_Avatar, rev.headPic];
-        //[imgTest setImageWithURL:[NSURL URLWithString:str]];
+        return ESIT_Sec_0_All;
+    }
+    else if(ESIT_Sec_1 == section)
+    {
+        return ESIT_Sec_1_All;
+    }
+    return 0;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return ESIT_Sec_All;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == ESIT_Sec_0 && indexPath.row == ESIT_Head)
+    {
+        CellSelfHeadInfo *cell = (CellSelfHeadInfo *)[tableView dequeueReusableCellWithIdentifier:@"CellSeCellSelfHeadInfolfHead"];
+        if (cell != nil)
+        {
+            cell=nil;
+        }
+        cell = (CellSelfHeadInfo *)[[[NSBundle mainBundle] loadNibNamed:@"CellSelfHeadInfo" owner:nil options:nil] lastObject];
+        
+        if([[UserMgr sharedInstance] userData].headPic)
+        {
+            NSString *str = [NSString stringWithFormat:@"%@%@", HTTP_Pic_Avatar, [[UserMgr sharedInstance] userData].headPic];
+            [cell.imgHead setImageWithURL:[NSURL URLWithString:str]];
+        }
+        else
+        {
+            
+        }
+
+        return cell;
     }
     else
     {
-        [[MIndicatorView sharedInstance] showWithTitle:rev.resultMsg animated:NO];
+        CellSelfInfo *cell = (CellSelfInfo *)[tableView dequeueReusableCellWithIdentifier:@"CellSelfInfo"];
+        if (cell != nil)
+        {
+            cell=nil;
+        }
+        cell = (CellSelfInfo *)[[[NSBundle mainBundle] loadNibNamed:@"CellSelfInfo" owner:nil options:nil] lastObject];
+        
+        if(ESIT_Sec_0 == indexPath.section)
+        {
+            switch (indexPath.row) {
+                case ESIT_Name:
+                {
+                    cell.labTitle.text = @"名字";
+                    if([[UserMgr sharedInstance] userData].name)
+                    {
+                        cell.labDes.text = [[UserMgr sharedInstance] userData].name;
+                    }
+                    else
+                    {
+                        cell.labDes.text = @"未设置";
+                    }
+                }
+                    break;
+                case ESIT_Nickname:
+                {
+                    cell.labTitle.text = @"昵称";
+                    if([[UserMgr sharedInstance] userData].nickName)
+                    {
+                        cell.labDes.text = [[UserMgr sharedInstance] userData].nickName;
+                    }
+                    else
+                    {
+                        cell.labDes.text = @"未设置";
+                    }
+                }
+                    break;
+                case ESIT_QcCode:
+                {
+                    cell.labTitle.text = @"我的二维码";
+                }
+                    break;
+                    
+                case ESIT_Account:
+                {
+                    cell.labTitle.text = @"账号";
+                    if([[UserMgr sharedInstance] userData].account)
+                    {
+                        cell.labDes.text = [[UserMgr sharedInstance] userData].account;
+                    }
+                    [cell.labNext setHidden:YES];
+                }
+                    break;
+                case ESIT_Phone:
+                {
+                    cell.labTitle.text = @"手机";
+                    if([[UserMgr sharedInstance] userData].phone)
+                    {
+                        cell.labDes.text = [[UserMgr sharedInstance] userData].phone;
+                    }
+                    else
+                    {
+                        cell.labDes.text = @"未设置";
+                    }
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+        else if(ESIT_Sec_1 == indexPath.section)
+        {
+            switch (indexPath.row) {
+                case ESIT_Sex:
+                {
+                    cell.labTitle.text = @"性别";
+                    if(EST_Male == [[UserMgr sharedInstance] userData].sex)
+                        cell.labDes.text = @"男";
+                    if(EST_Female == [[UserMgr sharedInstance] userData].sex)
+                        cell.labDes.text = @"女";
+                    else
+                        cell.labDes.text = @"未设置";
+                    
+                    [cell.labNext setHidden:YES];
+                }
+                case ESIT_Distinct:
+                {
+                    cell.labTitle.text = @"地域";
+                    cell.labDes.text = @"未设置";
+                }
+                    break;
+                case ESIT_Signature:
+                {
+                    cell.labTitle.text = @"个性签名";
+                    cell.labDes.text = @"未设置";
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+        return cell;
     }
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [picker dismissModalViewControllerAnimated:YES];
-}
-
-#pragma mark - 数据源方法
-#pragma mark 一共有多少组（section == 区域\组）
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return _allCells.count;
-}
-#pragma mark 第section组一共有多少行
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // 1.取得第section组的省份
-    NSArray *sectionCells = _allCells[section];
     
-    return sectionCells.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == ESIT_Sec_0 && indexPath.row == ESIT_Head)
+    {
+        return 80.0;
+    }
+    
+    return 44.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if(section == 1)
-        return 50;
+    return 20;
 }
 
-#pragma mark 返回每一行显示的内容(每一行显示怎样的cell)
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
+                                                             bundle: nil];
     
-    //    NSString *text = _allCities[indexPath.section][indexPath.row];
-    //    NSArray *sectionCities = _allCities[indexPath.section];
-    
-    // 1.取出第section组第row行的文字数据
-    // 取出第section组的省份 中 城市数组里面 第 row行的 数据
+    if(ESIT_Sec_0 == indexPath.section && ESIT_Head == indexPath.row)
+    {
+        UIActionSheet *sheet = nil;
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            sheet = [[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"手机相册", nil] autorelease];
+        }
+        else {
+            sheet = [[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"手机相册", nil] autorelease];
+        }
+        
+        [sheet showInView:self.view];
+    }
+    else
+    {
+        if(ESIT_Sec_0 == indexPath.section)
+        {
+            switch (indexPath.row) {
+                case ESIT_Name:
+                {
+                    
+                }
+                    break;
+                case ESIT_Nickname:
+                {
+                    
+                }
+                    break;
+                case ESIT_QcCode:
+                {
+                    UIViewController *vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"CLQcCode"];
+                    
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+                    
+                case ESIT_Account:
+                {
+                    
+                }
+                    break;
+                case ESIT_Phone:
+                {
+                    
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+        else if(ESIT_Sec_1 == indexPath.section)
+        {
+            switch (indexPath.row) {
+                case ESIT_Sex:
+                {
+                    
+                }
+                case ESIT_Distinct:
+                {
+                    
+                }
+                    break;
+                case ESIT_Signature:
+                {
+                    
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
 
-    NSArray *sectionCells = _allCells[indexPath.section];
-    
-    NSDictionary *data = sectionCells[indexPath.row];
-    
-    // 2.展示文字数据
-    cell.textLabel.text = [data objectForKey:kTitle];
-    return cell;
+    }
 }
-#pragma mark 第section组显示的头部标题
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    //    if (section == 0) return @"广东";
-//    //    if (section == 1) return @"湖南";
-//    //    if (section == 2) return @"湖北";
-//    //    if (section == 3) return @"广西";
-//    //    if (section == 4) return @"浙江";
-//    //    if (section == 5) return @"安徽";
-//    
-//    NSDictionary *province = _allProvinces[section];
-//    
-//    return province[kHeader];
-//}
-#pragma mark 第section组显示的尾部标题
-//- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-//{
-//    //    if (section == 0) return @"广东好";
-//    //    if (section == 1) return @"湖南也好";
-//    //    if (section == 2) return @"湖北更好";
-//    //    if (section == 3) return @"广西一般般";
-//    //    if (section == 4) return @"浙江应该可以吧";
-//    //    if (section == 5) return @"安徽确实有点坑爹";
-//    
-//    return _allProvinces[section][kFooter];
-//}
+
+-(void)dealloc
+{
+    [viewTable release];
+    [super dealloc];
+}
 
 @end

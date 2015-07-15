@@ -69,7 +69,7 @@ BMKMapManager* _mapManager;
     
 	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
 															 bundle: nil];
-    NSString* str = [[UserMgr sharedInstance] devToken];
+    //NSString* str = [[UserMgr sharedInstance] devToken];
     
 //    if(![[DataEngine sharedInstance] guidePage])
 //    {

@@ -11,5 +11,4 @@
 @interface CellSelfHeadInfo : UITableViewCell
 
 @property(nonatomic, retain)IBOutlet UIImageView    *imgHead;
-@property(nonatomic, retain)IBOutlet UIButton       *btnHead;
 @end

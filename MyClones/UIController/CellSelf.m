@@ -1,14 +1,14 @@
 //
-//  CellSelfHeadInfo.m
+//  CellSelf.m
 //  MyClones
 //
-//  Created by lyx on 15/7/8.
+//  Created by lyx on 15/7/15.
 //  Copyright (c) 2015年 Zhenwei. All rights reserved.
 //
 
-#import "CellSelfHeadInfo.h"
+#import "CellSelf.h"
 
-@implementation CellSelfHeadInfo
+@implementation CellSelf
 
 - (void)awakeFromNib {
     // Initialization code
@@ -20,9 +20,12 @@
     // Configure the view for the selected state
 }
 
--(void)dealloc{
+-(void)dealloc
+{
+    [_labDes release];
+    [_labTitle release];
+    [_imgIcon release];
     [super dealloc];
-    [_imgHead release];
 }
 
 @end

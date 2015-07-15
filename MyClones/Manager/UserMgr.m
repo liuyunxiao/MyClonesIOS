@@ -8,7 +8,8 @@
 
 #import "UserMgr.h"
 
-@implementation UserMgr
+@implementation UserData
+@synthesize userId = userId_;
 @synthesize devToken = devToken_;
 @synthesize name = name_;
 @synthesize account = account_;
@@ -20,8 +21,13 @@
 @synthesize sex = sex_;
 @synthesize cardId = cardId_;
 @synthesize phone = phone_;
-@synthesize login = login_;
+@synthesize district = district_;
+@synthesize signature = signature_;
+@end
 
+@implementation UserMgr
+@synthesize login = login_;
+@synthesize userData = userData_;
 -(id)init
 {
     return [super init];
@@ -32,12 +38,22 @@
     if(!revLogin)
         return;
     
-    headPic_ = revLogin.headPic;
-    age_ = revLogin.age;
-    sex_ = revLogin.sex;
-    phone_ = revLogin.phone;
-    nickName_ = revLogin.nickName;
-    
+    if(!userData_)
+    {
+        userData_ = [[UserData alloc] init];
+    }
+    userData_.userId = revLogin.userId;
+    userData_.headPic = revLogin.headPic;
+    userData_.age = revLogin.age;
+    userData_.sex = revLogin.sex;
+    userData_.phone = revLogin.phone;
+    userData_.nickName = revLogin.nickName;
+    userData_.name = revLogin.name;
+    userData_.account = revLogin.account;
+    userData_.password = revLogin.password;
+    userData_.cardId = revLogin.cardId;
+    userData_.district = revLogin.district;
+    userData_.signature = revLogin.signature;
     login_ = YES;
 }
 

@@ -19,12 +19,18 @@
 @end
 
 @interface RevLogin : RevBase
+@property(nonatomic, strong) NSString       *userId;
+@property(nonatomic, strong) NSString       *name;
 @property(nonatomic, strong) NSString       *headPic;
 @property(nonatomic, strong) NSString       *nickName;
 @property(nonatomic, strong) NSString       *cardId;
 @property(nonatomic, strong) NSString       *phone;
 @property(nonatomic, assign) ESexType       sex;
 @property(nonatomic, assign) int            age;
+@property(nonatomic, strong) NSString       *account;
+@property(nonatomic, strong) NSString       *password;
+@property(nonatomic, strong) NSString       *district;
+@property(nonatomic, strong) NSString       *signature;
 @end
 
 @interface RevChangeHeadPic : RevBase

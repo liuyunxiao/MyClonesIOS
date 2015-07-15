@@ -20,4 +20,11 @@
     // Configure the view for the selected state
 }
 
+-(void)dealloc
+{
+    [_labName release];
+    [_labNickname release];
+    [_imgHead release];
+    [super dealloc];
+}
 @end
