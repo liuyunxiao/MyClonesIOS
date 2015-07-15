@@ -19,20 +19,22 @@ typedef enum {
     ESIT_Sec_0      = 0,
     ESIT_Sec_0_All  = 1,
     
-    ESIT_Set        = 0,
-    ESIT_About      = 1,
+    ESIT_Auth       = 0,
+    ESIT_Set        = 1,
+    ESIT_About      = 2,
+    ESIT_Sec_1_All     ,
     ESIT_Sec_1      = 1,
-    ESIT_Sec_1_All  = 2,
     
     ESIT_Quit       = 0,
+    ESIT_Sec_2_All     ,
     ESIT_Sec_2      = 2,
-    ESIT_Sec_2_All  = 1,
-    
+
     ESIT_Sec_All    = 3,
 } ESelfItemType;
 
 @interface CLSelf ()
 {
+    
 }
 
 @end
@@ -117,7 +119,11 @@ typedef enum {
         
         if(ESIT_Sec_1 == indexPath.section)
         {
-            if(ESIT_Set == indexPath.row)
+            if(ESIT_Auth == indexPath.row)
+            {
+                cell.labTitle.text = @"实名认证";
+            }
+            else if(ESIT_Set == indexPath.row)
             {
                 cell.labTitle.text = @"设置";
             }
@@ -163,6 +169,21 @@ typedef enum {
     {
         UIViewController *vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"CLSelfInfo"];
         [self.navigationController pushViewController:vc animated:YES];
+    }
+    else
+    {
+        if(ESIT_Sec_1 == indexPath.section)
+        {
+            if(ESIT_Auth == indexPath.row)
+            {
+                UIViewController *vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"CLAuth"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
+        else if(ESIT_Sec_2 == indexPath.section)
+        {
+            
+        }
     }
 }
 

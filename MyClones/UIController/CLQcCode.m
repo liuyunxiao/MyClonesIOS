@@ -42,5 +42,10 @@
     imgCode.image = [QRCodeGenerator qrImageForString:codeStr imageSize:imgCode.bounds.size.width];
 }
 
+-(void)dealloc
+{
+    [imgCode release];
+    [super dealloc];
+}
 
 @end

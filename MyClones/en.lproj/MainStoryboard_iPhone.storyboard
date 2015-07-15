@@ -8,6 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="k2A-mu-uxb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IUa-Yh-C0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="NavLogin" id="HS5-Kj-3Sf" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="da6-LM-Ois">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -17,7 +18,6 @@
                         <segue destination="IpY-2h-tBn" kind="relationship" relationship="rootViewController" id="MIZ-ff-ye9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IUa-Yh-C0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3142" y="-765"/>
         </scene>
@@ -235,7 +235,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnN-LF-DzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3402" y="2806"/>
+            <point key="canvasLocation" x="-3058" y="2698"/>
+        </scene>
+        <!--实名认证-->
+        <scene sceneID="coG-lp-t4E">
+            <objects>
+                <viewController storyboardIdentifier="CLAuth" hidesBottomBarWhenPushed="YES" id="ORO-yg-pH8" customClass="CLAuth" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lpZ-b5-Gs9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓名" minimumFontSize="17" id="sYq-M4-JzM">
+                                <rect key="frame" x="36" y="91" width="249" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身份证" minimumFontSize="17" id="lYB-3k-Bkj">
+                                <rect key="frame" x="36" y="129" width="249" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tlj-tt-3BW">
+                                <rect key="frame" x="103" y="264" width="114" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="提交"/>
+                                <connections>
+                                    <action selector="onClickSubmit:" destination="ORO-yg-pH8" eventType="touchUpInside" id="VdR-LN-gCD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="性别" minimumFontSize="17" id="Ikn-Hr-QkC">
+                                <rect key="frame" x="36" y="167" width="249" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="实名认证" id="0le-bP-ZYG"/>
+                    <connections>
+                        <outlet property="texCardId" destination="lYB-3k-Bkj" id="6dA-Fd-pZc"/>
+                        <outlet property="texName" destination="sYq-M4-JzM" id="WMI-h7-mlE"/>
+                        <outlet property="texSex" destination="Ikn-Hr-QkC" id="Clh-TH-6jg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9F0-pv-cco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4104" y="2721"/>
         </scene>
         <!--通信-->
         <scene sceneID="bE1-Ue-dZ8">
@@ -300,6 +348,7 @@
         <!--Navigation Controller-->
         <scene sceneID="3fw-dO-jFj">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lks-d0-fck" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="NavPhantasmCreate" id="0Uj-9k-QUQ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y8x-y7-Qz3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -309,7 +358,6 @@
                         <segue destination="LHX-na-81w" kind="relationship" relationship="rootViewController" id="89c-sU-kTY"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lks-d0-fck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1703" y="-802"/>
         </scene>
@@ -390,6 +438,7 @@
                     <connections>
                         <outlet property="viewTalbe" destination="ZAW-ck-Z5f" id="naR-dr-B2c"/>
                         <segue destination="PFT-cN-b2Q" kind="push" id="ktR-kV-dFF"/>
+                        <segue destination="ORO-yg-pH8" kind="push" id="kQV-MS-o6l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zt6-KS-3tU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -424,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZF-XX-PM9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3402" y="1986"/>
+            <point key="canvasLocation" x="-3058" y="1986"/>
         </scene>
         <!--碰碰-->
         <scene sceneID="dqV-hg-Ttu">

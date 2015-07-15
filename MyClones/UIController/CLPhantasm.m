@@ -7,8 +7,8 @@
 //
 
 #import "CLPhantasm.h"
-#import "VPhantasmItem.h"
-
+#import "CellPhantasm.h"
+#import "Common.h"
 @interface CLPhantasm ()
 
 @end
@@ -38,35 +38,37 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - UITableView Delegate & Datasrouce -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return EPT_All;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VPhantasmItem *cell = (VPhantasmItem *)[tableView dequeueReusableCellWithIdentifier:@"VPhantasmItem"];
+    CellPhantasm *cell = (CellPhantasm *)[tableView dequeueReusableCellWithIdentifier:@"CellPhantasm"];
     if (cell != nil)
     {
         cell = nil;
     }
     
-    cell = (VPhantasmItem *)[[[NSBundle mainBundle] loadNibNamed:@"VPhantasmItem" owner:nil options:nil] lastObject];
+    cell = (CellPhantasm *)[[[NSBundle mainBundle] loadNibNamed:@"CellPhantasm" owner:nil options:nil] lastObject];
     
-    
-    if(indexPath.row == 0)
-    {
-        cell.labName.text = @"淘淘";
-    }
-    else if(indexPath.row == 1)
-    {
-        cell.labName.text = @"碰碰";
+    switch (indexPath.row) {
+        case EPT_EShopping:
+            cell.labTitle.text = @"淘淘";
+            break;
+        case EPT_RentHouse:
+            cell.labTitle.text = @"租房";
+            break;
+        case EPT_Pengpeng:
+            cell.labTitle.text = @"碰碰";
+            break;
+        case EPT_Flea:
+            cell.labTitle.text = @"二手";
+            break;
+        default:
+            break;
     }
     
     return cell;
@@ -78,29 +80,27 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
                                                              bundle: nil];
     UIViewController *vc = nil;
-    if(indexPath.row == 0)
-    {
-        vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CLEShopping"];
-    }
-    else if(indexPath.row == 1)
-    {
-        vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"CLPengpeng"];
-    }
     
+    switch (indexPath.row) {
+        case EPT_EShopping:
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CLEShopping"];
+            break;
+        case EPT_RentHouse:
+            
+            break;
+        case EPT_Pengpeng:
+            vc= [mainStoryboard instantiateViewControllerWithIdentifier:@"CLPengpeng"];
+            break;
+        case EPT_Flea:
+            
+            break;
+        default:
+            break;
+    }
     [self.navigationController pushViewController:vc animated:YES];
     [self.navigationController.navigationBar setHidden:NO];
     
-    //[self.tabBarController.tabBar setHidden:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -36,7 +36,7 @@ typedef enum {
 
 @interface CLSelfInfo ()
 {
-    Task        *taskChangeHeadPic;
+    Task        *taskChangeHeadPic_;
     CropImagePopoverView *cropImageView_;
     
 }
@@ -55,7 +55,8 @@ typedef enum {
 
 -(void)onRevChangeHeadPic:(FBTaskResult *)aResult context:(id)aContext
 {
-    //CANCEL_AND_RELEASE_TASK(taskChangeHeadPic);
+    taskChangeHeadPic_ = nil;
+    //CANCEL_AND_RELEASE_TASK(taskChangeHeadPic_);
     [[MIndicatorView sharedInstance] hide];
     RevChangeHeadPic *rev = aResult.resultValue;
     if(!rev)
@@ -137,7 +138,7 @@ typedef enum {
     
     //fileData=[aData retain];
     
-    if(!taskChangeHeadPic)
+    if(!taskChangeHeadPic_)
     {
         NSMutableArray *arry = [[NSMutableArray alloc] init];
         {
@@ -152,7 +153,7 @@ typedef enum {
             
         }
         
-        taskChangeHeadPic = [[HttpMgr sharedInstance] send:@"SendChangeHeadPic" data:nil files:arry observer:self selector:@selector(onRevChangeHeadPic:context:) block:YES];
+        taskChangeHeadPic_ = [[HttpMgr sharedInstance] send:@"SendChangeHeadPic" data:nil files:arry observer:self selector:@selector(onRevChangeHeadPic:context:) block:YES];
     }
 }
 
@@ -277,14 +278,22 @@ typedef enum {
                 {
                     cell.labTitle.text = @"性别";
                     if(EST_Male == [[UserMgr sharedInstance] userData].sex)
+                    {
                         cell.labDes.text = @"男";
-                    if(EST_Female == [[UserMgr sharedInstance] userData].sex)
+                        [cell.labNext setHidden:YES];
+                    }
+                    else if(EST_Female == [[UserMgr sharedInstance] userData].sex)
+                    {
                         cell.labDes.text = @"女";
+                        [cell.labNext setHidden:YES];
+                    }
                     else
+                    {
                         cell.labDes.text = @"未设置";
-                    
-                    [cell.labNext setHidden:YES];
+                        [cell.labNext setHidden:NO];
+                    }
                 }
+                    break;
                 case ESIT_Distinct:
                 {
                     cell.labTitle.text = @"地域";

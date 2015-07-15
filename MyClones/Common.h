@@ -44,7 +44,11 @@ typedef enum {
 } EUIBottomType;
 
 typedef enum {
-    EPT_EShoppingReviewer,     //网购
+    EPT_EShopping,      //网购
+    EPT_RentHouse,      //租房
+    EPT_Pengpeng,       //碰碰
+    EPT_Flea,           //二手
+    EPT_All,
 } EPhantasmType;
 
 typedef enum {

@@ -91,6 +91,9 @@
 
 -(IBAction)onClickSummit:(id)sender
 {
+    if(taskRegister_)
+        return;
+    
     if(texAccount.text.length == 0)
     {
         [[MIndicatorView sharedInstance] showWithTitle:@"账号不能为空" animated:NO];
@@ -115,11 +118,9 @@
     [dic setObject:[NSNumber numberWithInt:accountType] forKey:@"type"];
     [dic setObject:texPhoneCode.text forKey:@"code"];
     [dic setObject:texPhone.text forKey:@"phone"];
+
+    taskRegister_ = [[HttpMgr sharedInstance] send:@"SendRegister" data:dic observer:self selector:@selector(onRevRegister:context:) block:YES];
     
-    if(taskRegister_ == nil)
-    {
-        taskRegister_ = [[HttpMgr sharedInstance] send:@"SendRegister" data:dic observer:self selector:@selector(onRevRegister:context:) block:YES];
-    }
     
 }
 

@@ -117,8 +117,6 @@
 		54CF53631B3D21A400C7C2BA /* CLPhantasm.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF53621B3D21A400C7C2BA /* CLPhantasm.m */; };
 		54CF53661B3D21C100C7C2BA /* CLHello.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF53651B3D21C100C7C2BA /* CLHello.m */; };
 		54CF53691B3D21D400C7C2BA /* CLSelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF53681B3D21D400C7C2BA /* CLSelf.m */; };
-		54CF53711B3D2A5500C7C2BA /* VPhantasmItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF536F1B3D2A5500C7C2BA /* VPhantasmItem.m */; };
-		54CF53721B3D2A5500C7C2BA /* VPhantasmItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54CF53701B3D2A5500C7C2BA /* VPhantasmItem.xib */; };
 		54CF53761B3D362500C7C2BA /* CLPengpeng.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF53751B3D362500C7C2BA /* CLPengpeng.m */; };
 		54CF537D1B3D51A600C7C2BA /* CLEShopping.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF537C1B3D51A600C7C2BA /* CLEShopping.m */; };
 		54CF53801B3D546F00C7C2BA /* CLESArround.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF537F1B3D546F00C7C2BA /* CLESArround.m */; };
@@ -146,9 +144,11 @@
 		54D6FCC31B562A45005B2CAE /* UIImage+Rotate_Flip.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCBE1B562A45005B2CAE /* UIImage+Rotate_Flip.m */; };
 		54D6FCC41B562A45005B2CAE /* UIImage+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCC01B562A45005B2CAE /* UIImage+Rotation.m */; };
 		54D6FCC71B562F1D005B2CAE /* CLQcCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCC61B562F1D005B2CAE /* CLQcCode.m */; };
+		54D6FCCA1B5635A1005B2CAE /* CLAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCC91B5635A1005B2CAE /* CLAuth.m */; };
+		54D6FCCD1B56420A005B2CAE /* BaiduMapMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCCC1B56420A005B2CAE /* BaiduMapMgr.m */; };
+		54D6FCD11B56441C005B2CAE /* CellPhantasm.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D6FCCF1B56441C005B2CAE /* CellPhantasm.m */; };
+		54D6FCD21B56441C005B2CAE /* CellPhantasm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D6FCD01B56441C005B2CAE /* CellPhantasm.xib */; };
 		54DB833C1B4687510068092A /* CLSelfInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DB833B1B4687510068092A /* CLSelfInfo.m */; };
-		54DBBC751B4D12F7006999BE /* CellNormalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DBBC731B4D12F7006999BE /* CellNormalItem.m */; };
-		54DBBC761B4D12F7006999BE /* CellNormalItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DBBC741B4D12F7006999BE /* CellNormalItem.xib */; };
 		54DBBC7B1B4D14E2006999BE /* CellSelfHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DBBC791B4D14E2006999BE /* CellSelfHead.m */; };
 		54DBBC7C1B4D14E2006999BE /* CellSelfHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DBBC7A1B4D14E2006999BE /* CellSelfHead.xib */; };
 		54DBBC801B4D15EB006999BE /* CellSelfHeadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DBBC7E1B4D15EB006999BE /* CellSelfHeadInfo.m */; };
@@ -487,9 +487,6 @@
 		54CF53651B3D21C100C7C2BA /* CLHello.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLHello.m; sourceTree = "<group>"; };
 		54CF53671B3D21D400C7C2BA /* CLSelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSelf.h; sourceTree = "<group>"; };
 		54CF53681B3D21D400C7C2BA /* CLSelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSelf.m; sourceTree = "<group>"; };
-		54CF536E1B3D2A5500C7C2BA /* VPhantasmItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPhantasmItem.h; sourceTree = "<group>"; };
-		54CF536F1B3D2A5500C7C2BA /* VPhantasmItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPhantasmItem.m; sourceTree = "<group>"; };
-		54CF53701B3D2A5500C7C2BA /* VPhantasmItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VPhantasmItem.xib; sourceTree = "<group>"; };
 		54CF53741B3D362500C7C2BA /* CLPengpeng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPengpeng.h; sourceTree = "<group>"; };
 		54CF53751B3D362500C7C2BA /* CLPengpeng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPengpeng.m; sourceTree = "<group>"; };
 		54CF537B1B3D51A600C7C2BA /* CLEShopping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLEShopping.h; sourceTree = "<group>"; };
@@ -539,11 +536,15 @@
 		54D6FCC01B562A45005B2CAE /* UIImage+Rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotation.m"; sourceTree = "<group>"; };
 		54D6FCC51B562F1D005B2CAE /* CLQcCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLQcCode.h; sourceTree = "<group>"; };
 		54D6FCC61B562F1D005B2CAE /* CLQcCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLQcCode.m; sourceTree = "<group>"; };
+		54D6FCC81B5635A1005B2CAE /* CLAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAuth.h; sourceTree = "<group>"; };
+		54D6FCC91B5635A1005B2CAE /* CLAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAuth.m; sourceTree = "<group>"; };
+		54D6FCCB1B56420A005B2CAE /* BaiduMapMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMapMgr.h; sourceTree = "<group>"; };
+		54D6FCCC1B56420A005B2CAE /* BaiduMapMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduMapMgr.m; sourceTree = "<group>"; };
+		54D6FCCE1B56441C005B2CAE /* CellPhantasm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellPhantasm.h; sourceTree = "<group>"; };
+		54D6FCCF1B56441C005B2CAE /* CellPhantasm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellPhantasm.m; sourceTree = "<group>"; };
+		54D6FCD01B56441C005B2CAE /* CellPhantasm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellPhantasm.xib; sourceTree = "<group>"; };
 		54DB833A1B4687510068092A /* CLSelfInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSelfInfo.h; sourceTree = "<group>"; };
 		54DB833B1B4687510068092A /* CLSelfInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSelfInfo.m; sourceTree = "<group>"; };
-		54DBBC721B4D12F7006999BE /* CellNormalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellNormalItem.h; sourceTree = "<group>"; };
-		54DBBC731B4D12F7006999BE /* CellNormalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellNormalItem.m; sourceTree = "<group>"; };
-		54DBBC741B4D12F7006999BE /* CellNormalItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellNormalItem.xib; sourceTree = "<group>"; };
 		54DBBC781B4D14E2006999BE /* CellSelfHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellSelfHead.h; sourceTree = "<group>"; };
 		54DBBC791B4D14E2006999BE /* CellSelfHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellSelfHead.m; sourceTree = "<group>"; };
 		54DBBC7A1B4D14E2006999BE /* CellSelfHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellSelfHead.xib; sourceTree = "<group>"; };
@@ -1226,6 +1227,8 @@
 				541FBF5B1B3403410028190A /* HttpMgr.m */,
 				54D070721B4BAF950036BBA7 /* BackgroundMgr.h */,
 				54D070731B4BAF950036BBA7 /* BackgroundMgr.m */,
+				54D6FCCB1B56420A005B2CAE /* BaiduMapMgr.h */,
+				54D6FCCC1B56420A005B2CAE /* BaiduMapMgr.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1292,9 +1295,9 @@
 				54CF53621B3D21A400C7C2BA /* CLPhantasm.m */,
 				54D1E6DF1B346D9000C7D044 /* CLPhantasmCreate.h */,
 				54D1E6E01B346D9000C7D044 /* CLPhantasmCreate.m */,
-				54CF536E1B3D2A5500C7C2BA /* VPhantasmItem.h */,
-				54CF536F1B3D2A5500C7C2BA /* VPhantasmItem.m */,
-				54CF53701B3D2A5500C7C2BA /* VPhantasmItem.xib */,
+				54D6FCCE1B56441C005B2CAE /* CellPhantasm.h */,
+				54D6FCCF1B56441C005B2CAE /* CellPhantasm.m */,
+				54D6FCD01B56441C005B2CAE /* CellPhantasm.xib */,
 			);
 			name = Phantasm;
 			sourceTree = "<group>";
@@ -1349,9 +1352,6 @@
 				541FBF6D1B3412920028190A /* InputHelper.m */,
 				541FBF641B340B810028190A /* BaseViewController.h */,
 				541FBF651B340B810028190A /* BaseViewController.m */,
-				54DBBC721B4D12F7006999BE /* CellNormalItem.h */,
-				54DBBC731B4D12F7006999BE /* CellNormalItem.m */,
-				54DBBC741B4D12F7006999BE /* CellNormalItem.xib */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -1422,6 +1422,8 @@
 				54D6FCAA1B55F7BD005B2CAE /* CellSelf.h */,
 				54D6FCAB1B55F7BD005B2CAE /* CellSelf.m */,
 				54D6FCAC1B55F7BD005B2CAE /* CellSelf.xib */,
+				54D6FCC81B5635A1005B2CAE /* CLAuth.h */,
+				54D6FCC91B5635A1005B2CAE /* CLAuth.m */,
 			);
 			name = Self;
 			sourceTree = "<group>";
@@ -1996,12 +1998,11 @@
 				1A1B61C01A761A180089D6DB /* UMSocialSDKResourcesNew.bundle in Resources */,
 				1A1B61BB1A761A180089D6DB /* UMShareEditViewController.xib in Resources */,
 				1A1B61BC1A761A180089D6DB /* UMShareEditViewControlleriPad.xib in Resources */,
-				54CF53721B3D2A5500C7C2BA /* VPhantasmItem.xib in Resources */,
 				54D45F7B1B4528D0008F39F7 /* third_selected@2x.png in Resources */,
+				54D6FCD21B56441C005B2CAE /* CellPhantasm.xib in Resources */,
 				54629ED01B3160DD0060C9CF /* mapapi.bundle in Resources */,
 				1A1B61BE1A761A180089D6DB /* UMSnsAccountViewController.xib in Resources */,
 				541FBF4A1B33D7DE0028190A /* menu-button@2x.png in Resources */,
-				54DBBC761B4D12F7006999BE /* CellNormalItem.xib in Resources */,
 				1AD0E2511791519F00E3EC34 /* iTunesArtwork.png in Resources */,
 				541FBF401B33D7DE0028190A /* InfoPlist.strings in Resources */,
 				1AD0E2531791519F00E3EC34 /* Icon@2x.png in Resources */,
@@ -2074,7 +2075,6 @@
 				1A0C02121A8B4973003E0242 /* rscode.c in Sources */,
 				54D6FCB81B5629F9005B2CAE /* ImageCropperView.m in Sources */,
 				8AEF752C1761E9DE00819D78 /* ASIDataDecompressor.m in Sources */,
-				54DBBC751B4D12F7006999BE /* CellNormalItem.m in Sources */,
 				8AEF752D1761E9DE00819D78 /* ASIDownloadCache.m in Sources */,
 				54D6FCC41B562A45005B2CAE /* UIImage+Rotation.m in Sources */,
 				8AEF752E1761E9DE00819D78 /* ASIFormDataRequest.m in Sources */,
@@ -2135,12 +2135,12 @@
 				541FBF311B33D7DE0028190A /* DataDefine.m in Sources */,
 				1A0C020E1A8B4973003E0242 /* QRCodeGenerator.m in Sources */,
 				8AEF754A1761E9DE00819D78 /* SDWebImageDecoder.m in Sources */,
+				54D6FCCD1B56420A005B2CAE /* BaiduMapMgr.m in Sources */,
 				54D6FCC21B562A45005B2CAE /* UIImage+fixOrientation.m in Sources */,
 				541FBF491B33D7DE0028190A /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				8AEF754B1761E9DE00819D78 /* SDWebImageDownloader.m in Sources */,
 				54CF53891B3D55F700C7C2BA /* CLESComments.m in Sources */,
 				54DBBC7B1B4D14E2006999BE /* CellSelfHead.m in Sources */,
-				54CF53711B3D2A5500C7C2BA /* VPhantasmItem.m in Sources */,
 				54D1E6C71B3453E100C7D044 /* SlideNavigationController+Utils.m in Sources */,
 				541FBF661B340B810028190A /* BaseViewController.m in Sources */,
 				8AEF754C1761E9DE00819D78 /* SDWebImageManager.m in Sources */,
@@ -2193,6 +2193,7 @@
 				54CF53661B3D21C100C7C2BA /* CLHello.m in Sources */,
 				8AEF75681761E9DE00819D78 /* MNavigationBarDecorator.m in Sources */,
 				8AEF75691761E9DE00819D78 /* UINavigationBar+CustomBackgoundImage.m in Sources */,
+				54D6FCCA1B5635A1005B2CAE /* CLAuth.m in Sources */,
 				541FBF331B33D7DE0028190A /* DataModel.m in Sources */,
 				8AEF756A1761E9DE00819D78 /* RefreshTableHeaderView.m in Sources */,
 				8AEF756B1761E9DE00819D78 /* SEMenuItem.m in Sources */,
@@ -2212,6 +2213,7 @@
 				8AEF75731761E9DE00819D78 /* UIColor+RGB.m in Sources */,
 				8AEF75741761E9DE00819D78 /* UIImage+ScaleAddition.m in Sources */,
 				1A748C0C1AE61D02002926DC /* JYMenu.m in Sources */,
+				54D6FCD11B56441C005B2CAE /* CellPhantasm.m in Sources */,
 				547FF62D1B0C504C003C55DA /* CycleScrollView.m in Sources */,
 				1AC5EA3F178E789500E805AA /* DCRoundSwitch.m in Sources */,
 				1AC5EA40178E789500E805AA /* DCRoundSwitchKnobLayer.m in Sources */,
